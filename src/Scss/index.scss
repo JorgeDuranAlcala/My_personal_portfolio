@@ -1,0 +1,152 @@
+@import "./navbar";
+@import "./vars";
+@import "./wave";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    overflow-x: hidden;
+}
+
+.aboutMe {
+    position: relative;
+    .about {
+        position: absolute;
+       left: 145%;
+       width: 700px;
+       text-align: center;
+       h3 {
+           padding: 8vmin 4vmin;
+           font-size: 2.2em;
+       }
+       p {
+           text-align: left;
+           line-height: 35px;
+           font-size: 1.2em;
+       }
+    }
+    .profile {
+        width: 300px;
+        position: absolute;
+        top: 40px;
+        left: 12%;
+        img {
+            width: 100%;
+            border-radius: 50%;
+        }
+    }
+}
+
+section {
+    height: 100vh;
+    width: 100%;
+}
+
+
+
+section:nth-of-type(1) {
+    background: #fff url(../assets/img/sky-space.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .hero {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        
+        h1 {
+            color: #fff;
+            font-size: 4em;
+        }
+        p {
+            color: #fff;
+            text-align: center;
+            font-size: 2em;
+        }
+    }
+}
+
+section:nth-of-type(3) {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    .subtitle-2 {
+        position: absolute;
+        top: 0;
+        text-align: center;
+        left: 40%;
+        font-size: 2em;
+    }
+}
+
+section:nth-of-type(4) {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    .subtitle-3 {
+        position: absolute;
+        top: 0;
+        text-align: center;
+        left: 45%;
+        font-size: 2em;
+    }
+
+    .skills {
+        width: 700px;
+        max-height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+
+        .html-icon {
+            color: brown;
+            font-size: 5em; 
+            position: absolute;
+            left: 0;
+        }
+
+        span {
+            position: absolute;
+            right: 0;
+            font-size: 2em;
+            color: #f12711;
+            font-weight: bold;
+        }
+        
+        .percent {
+            position: relative;
+            width: 70%;
+            height: 50px;
+            margin-left: 2svmin;
+            border-radius: 20px;
+            background-color: #ddd;
+            .progress {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 80%;
+                height: 100%;
+                border-radius: 20px;
+                background: linear-gradient(to right, #f12711, #f5af19);
+                animation: bars 3s ease-in-out;
+            }
+        }
+    }
+
+}
+
+@keyframes bars {
+    from { width: 0%;}
+}
+
+

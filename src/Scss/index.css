@@ -1,0 +1,340 @@
+nav {
+  width: 100%;
+  position: fixed;
+  padding: 20px 10px;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li .link {
+  display: block;
+  float: right;
+  font-size: 1em;
+  padding: 20px 20px;
+  color: #fff;
+  text-decoration: none;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  font-weight: bold;
+  text-align: center;
+}
+
+nav ul li .link:hover {
+  color: #cccccc;
+}
+
+.logo {
+  float: left;
+  padding: 10px 10px;
+  color: #fff;
+  font-size: 2em;
+}
+
+.wolf-icon {
+  width: 50px;
+  float: left;
+  margin: 10px 10px;
+}
+
+.wolf-icon img {
+  width: 100%;
+}
+
+.sticky {
+  background-color: #fff;
+  padding: 8px 20px;
+  z-index: 9999;
+}
+
+.sticky .link {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.sticky .logo {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* Color Theme Swatches in Hex */
+/* Color Theme Swatches in RGBA */
+/* Color Theme Swatches in HSLA */
+.wave {
+  width: 200%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background: url(../assets/img/svgs/wave_2.svg);
+  background-position: 0 bottom;
+  -webkit-transform-origin: center bottom;
+          transform-origin: center bottom;
+  background-repeat: repeat-x;
+}
+
+.wave_1 {
+  -webkit-animation: aniwave1 50s infinite linear;
+          animation: aniwave1 50s infinite linear;
+  opacity: 1;
+  z-index: 1000;
+}
+
+.wave_2 {
+  -webkit-animation: aniwave1 45s infinite linear;
+          animation: aniwave1 45s infinite linear;
+  opacity: .5;
+  z-index: 997;
+}
+
+.wave_3 {
+  -webkit-animation: aniwave1 35s infinite linear;
+          animation: aniwave1 35s infinite linear;
+  opacity: .75;
+  z-index: 998;
+}
+
+.wave_4 {
+  opacity: .80;
+  -webkit-animation: aniwave1 30s infinite linear;
+          animation: aniwave1 30s infinite linear;
+  z-index: 999;
+}
+
+/* background-color: #0A0B26; */
+/* #221F73 */
+@-webkit-keyframes aniwave1 {
+  0% {
+    -webkit-transform: translateX(0%) translateZ(0) scaleY(0.2);
+            transform: translateX(0%) translateZ(0) scaleY(0.2);
+  }
+  50% {
+    -webkit-transform: translateX(-25%) translateZ(0) scaleY(0.4);
+            transform: translateX(-25%) translateZ(0) scaleY(0.4);
+  }
+  100% {
+    -webkit-transform: translateX(-50%) translateZ(0) scaleY(0.5);
+            transform: translateX(-50%) translateZ(0) scaleY(0.5);
+  }
+}
+@keyframes aniwave1 {
+  0% {
+    -webkit-transform: translateX(0%) translateZ(0) scaleY(0.2);
+            transform: translateX(0%) translateZ(0) scaleY(0.2);
+  }
+  50% {
+    -webkit-transform: translateX(-25%) translateZ(0) scaleY(0.4);
+            transform: translateX(-25%) translateZ(0) scaleY(0.4);
+  }
+  100% {
+    -webkit-transform: translateX(-50%) translateZ(0) scaleY(0.5);
+            transform: translateX(-50%) translateZ(0) scaleY(0.5);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  overflow-x: hidden;
+}
+
+.aboutMe {
+  position: relative;
+}
+
+.aboutMe .about {
+  position: absolute;
+  left: 145%;
+  width: 700px;
+  text-align: center;
+}
+
+.aboutMe .about h3 {
+  padding: 8vmin 4vmin;
+  font-size: 2.2em;
+}
+
+.aboutMe .about p {
+  text-align: left;
+  line-height: 35px;
+  font-size: 1.2em;
+}
+
+.aboutMe .profile {
+  width: 300px;
+  position: absolute;
+  top: 40px;
+  left: 12%;
+}
+
+.aboutMe .profile img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+section {
+  height: 100vh;
+  width: 100%;
+}
+
+section:nth-of-type(1) {
+  background: #fff url(../assets/img/sky-space.jpg);
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section:nth-of-type(1) .hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+section:nth-of-type(1) .hero h1 {
+  color: #fff;
+  font-size: 4em;
+}
+
+section:nth-of-type(1) .hero p {
+  color: #fff;
+  text-align: center;
+  font-size: 2em;
+}
+
+section:nth-of-type(3) {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+section:nth-of-type(3) .subtitle-2 {
+  position: absolute;
+  top: 0;
+  text-align: center;
+  left: 40%;
+  font-size: 2em;
+}
+
+section:nth-of-type(4) {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+section:nth-of-type(4) .subtitle-3 {
+  position: absolute;
+  top: 0;
+  text-align: center;
+  left: 45%;
+  font-size: 2em;
+}
+
+section:nth-of-type(4) .skills {
+  width: 700px;
+  max-height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+section:nth-of-type(4) .skills .html-icon {
+  color: brown;
+  font-size: 5em;
+  position: absolute;
+  left: 0;
+}
+
+section:nth-of-type(4) .skills span {
+  position: absolute;
+  right: 0;
+  font-size: 2em;
+  color: #f12711;
+  font-weight: bold;
+}
+
+section:nth-of-type(4) .skills .percent {
+  position: relative;
+  width: 70%;
+  height: 50px;
+  margin-left: 2svmin;
+  border-radius: 20px;
+  background-color: #ddd;
+}
+
+section:nth-of-type(4) .skills .percent .progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 100%;
+  border-radius: 20px;
+  background: -webkit-gradient(linear, left top, right top, from(#f12711), to(#f5af19));
+  background: linear-gradient(to right, #f12711, #f5af19);
+  -webkit-animation: bars 3s ease-in-out;
+          animation: bars 3s ease-in-out;
+}
+
+@-webkit-keyframes bars {
+  from {
+    width: 0%;
+  }
+}
+
+@keyframes bars {
+  from {
+    width: 0%;
+  }
+}
+/*# sourceMappingURL=index.css.map */
