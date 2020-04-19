@@ -61,8 +61,7 @@ nav ul li .link:hover {
 }
 
 /* Color Theme Swatches in Hex */
-/* Color Theme Swatches in RGBA */
-/* Color Theme Swatches in HSLA */
+/* gradients colors */
 .wave {
   width: 200%;
   position: absolute;
@@ -137,6 +136,10 @@ nav ul li .link:hover {
   }
 }
 
+/* Color Theme Swatches in Hex */
+/* gradients colors */
+/* Color Theme Swatches in Hex */
+/* gradients colors */
 * {
   margin: 0;
   padding: 0;
@@ -251,11 +254,13 @@ section:nth-of-type(4) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 200vh !important;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -271,8 +276,10 @@ section:nth-of-type(4) .subtitle-3 {
 }
 
 section:nth-of-type(4) .skills {
+  padding: 10px 40px;
   width: 700px;
   max-height: auto;
+  margin: 20px 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -291,16 +298,38 @@ section:nth-of-type(4) .skills {
 
 section:nth-of-type(4) .skills .html-icon {
   color: brown;
-  font-size: 5em;
+  font-size: 4em;
   position: absolute;
   left: 0;
 }
 
-section:nth-of-type(4) .skills span {
+section:nth-of-type(4) .skills .html-icon {
+  color: brown;
+  font-size: 4em;
   position: absolute;
-  right: 0;
-  font-size: 2em;
-  color: #f12711;
+  left: 0;
+}
+
+section:nth-of-type(4) .skills .html-icon {
+  color: brown;
+  font-size: 4em;
+  position: absolute;
+  left: 0;
+}
+
+section:nth-of-type(4) .skills .html-icon {
+  color: brown;
+  font-size: 4em;
+  position: absolute;
+  left: 0;
+}
+
+section:nth-of-type(4) .skills .html-span {
+  position: absolute;
+  right: -15px;
+  top: -10px;
+  font-size: 3em;
+  color: brown;
   font-weight: bold;
 }
 
@@ -308,12 +337,12 @@ section:nth-of-type(4) .skills .percent {
   position: relative;
   width: 70%;
   height: 50px;
-  margin-left: 2svmin;
+  margin-left: 2vmin;
   border-radius: 20px;
   background-color: #ddd;
 }
 
-section:nth-of-type(4) .skills .percent .progress {
+section:nth-of-type(4) .skills .percent .html-progress {
   position: absolute;
   top: 0;
   left: 0;
@@ -322,6 +351,406 @@ section:nth-of-type(4) .skills .percent .progress {
   border-radius: 20px;
   background: -webkit-gradient(linear, left top, right top, from(#f12711), to(#f5af19));
   background: linear-gradient(to right, #f12711, #f5af19);
+  -webkit-animation: bars 3s ease-in-out;
+          animation: bars 3s ease-in-out;
+}
+
+section:nth-of-type(4) .skills {
+  padding: 10px 40px;
+  width: 700px;
+  max-height: auto;
+  margin: 20px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+section:nth-of-type(4) .skills .css-icon {
+  color: blue;
+  font-size: 4em;
+  position: absolute;
+  left: 0;
+}
+
+section:nth-of-type(4) .skills .css-icon {
+  color: blue;
+  font-size: 4em;
+  position: absolute;
+  left: 0;
+}
+
+section:nth-of-type(4) .skills .css-icon {
+  color: blue;
+  font-size: 4em;
+  position: absolute;
+  left: 0;
+}
+
+section:nth-of-type(4) .skills .css-icon {
+  color: blue;
+  font-size: 4em;
+  position: absolute;
+  left: 0;
+}
+
+section:nth-of-type(4) .skills .css-span {
+  position: absolute;
+  right: -15px;
+  top: -10px;
+  font-size: 3em;
+  color: blue;
+  font-weight: bold;
+}
+
+section:nth-of-type(4) .skills .percent {
+  position: relative;
+  width: 70%;
+  height: 50px;
+  margin-left: 2vmin;
+  border-radius: 20px;
+  background-color: #ddd;
+}
+
+section:nth-of-type(4) .skills .percent .css-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 100%;
+  border-radius: 20px;
+  background: -webkit-gradient(linear, left top, right top, from(#084be6), to(#0b73fba6));
+  background: linear-gradient(to right, #084be6, #0b73fba6);
+  -webkit-animation: bars 3s ease-in-out;
+          animation: bars 3s ease-in-out;
+}
+
+section:nth-of-type(4) .skills {
+  padding: 10px 40px;
+  width: 700px;
+  max-height: auto;
+  margin: 20px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+section:nth-of-type(4) .skills .js-icon {
+  color: rgba(245, 241, 46, 0.794);
+  font-size: 4em;
+  position: absolute;
+  left: 0;
+}
+
+section:nth-of-type(4) .skills .js-icon {
+  color: rgba(245, 241, 46, 0.794);
+  font-size: 4em;
+  position: absolute;
+  left: 0;
+}
+
+section:nth-of-type(4) .skills .js-icon {
+  color: rgba(245, 241, 46, 0.794);
+  font-size: 4em;
+  position: absolute;
+  left: 0;
+}
+
+section:nth-of-type(4) .skills .js-icon {
+  color: rgba(245, 241, 46, 0.794);
+  font-size: 4em;
+  position: absolute;
+  left: 0;
+}
+
+section:nth-of-type(4) .skills .js-span {
+  position: absolute;
+  right: -15px;
+  top: -10px;
+  font-size: 3em;
+  color: rgba(245, 241, 46, 0.794);
+  font-weight: bold;
+}
+
+section:nth-of-type(4) .skills .percent {
+  position: relative;
+  width: 70%;
+  height: 50px;
+  margin-left: 2vmin;
+  border-radius: 20px;
+  background-color: #ddd;
+}
+
+section:nth-of-type(4) .skills .percent .js-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 100%;
+  border-radius: 20px;
+  background: -webkit-gradient(linear, left top, right top, from(#e5f50c), to(#ecfb0df8));
+  background: linear-gradient(to right, #e5f50c, #ecfb0df8);
+  -webkit-animation: bars 3s ease-in-out;
+          animation: bars 3s ease-in-out;
+}
+
+section:nth-of-type(4) .skills {
+  padding: 10px 40px;
+  width: 700px;
+  max-height: auto;
+  margin: 20px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+section:nth-of-type(4) .skills .react-icon {
+  color: #07e9f1;
+  font-size: 4em;
+  position: absolute;
+  left: 0;
+}
+
+section:nth-of-type(4) .skills .react-icon {
+  color: #07e9f1;
+  font-size: 4em;
+  position: absolute;
+  left: 0;
+}
+
+section:nth-of-type(4) .skills .react-icon {
+  color: #07e9f1;
+  font-size: 4em;
+  position: absolute;
+  left: 0;
+}
+
+section:nth-of-type(4) .skills .react-icon {
+  color: #07e9f1;
+  font-size: 4em;
+  position: absolute;
+  left: 0;
+}
+
+section:nth-of-type(4) .skills .react-span {
+  position: absolute;
+  right: -15px;
+  top: -10px;
+  font-size: 3em;
+  color: #07e9f1;
+  font-weight: bold;
+}
+
+section:nth-of-type(4) .skills .percent {
+  position: relative;
+  width: 70%;
+  height: 50px;
+  margin-left: 2vmin;
+  border-radius: 20px;
+  background-color: #ddd;
+}
+
+section:nth-of-type(4) .skills .percent .react-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 100%;
+  border-radius: 20px;
+  background: -webkit-gradient(linear, left top, right top, from(#11d7f1), to(#19f5c5));
+  background: linear-gradient(to right, #11d7f1, #19f5c5);
+  -webkit-animation: bars 3s ease-in-out;
+          animation: bars 3s ease-in-out;
+}
+
+section:nth-of-type(4) .skills {
+  padding: 10px 40px;
+  width: 700px;
+  max-height: auto;
+  margin: 20px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+section:nth-of-type(4) .skills .php-icon {
+  color: #333399;
+  font-size: 4em;
+  position: absolute;
+  left: 0;
+}
+
+section:nth-of-type(4) .skills .php-icon {
+  color: #333399;
+  font-size: 4em;
+  position: absolute;
+  left: 0;
+}
+
+section:nth-of-type(4) .skills .php-icon {
+  color: #333399;
+  font-size: 4em;
+  position: absolute;
+  left: 0;
+}
+
+section:nth-of-type(4) .skills .php-icon {
+  color: #333399;
+  font-size: 4em;
+  position: absolute;
+  left: 0;
+}
+
+section:nth-of-type(4) .skills .php-span {
+  position: absolute;
+  right: -15px;
+  top: -10px;
+  font-size: 3em;
+  color: #333399;
+  font-weight: bold;
+}
+
+section:nth-of-type(4) .skills .percent {
+  position: relative;
+  width: 70%;
+  height: 50px;
+  margin-left: 2vmin;
+  border-radius: 20px;
+  background-color: #ddd;
+}
+
+section:nth-of-type(4) .skills .percent .php-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 100%;
+  border-radius: 20px;
+  background: -webkit-gradient(linear, right top, left top, from(#ff00cc), to(#333399));
+  background: linear-gradient(to left, #ff00cc, #333399);
+  -webkit-animation: bars 3s ease-in-out;
+          animation: bars 3s ease-in-out;
+}
+
+section:nth-of-type(4) .skills {
+  padding: 10px 40px;
+  width: 700px;
+  max-height: auto;
+  margin: 20px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+section:nth-of-type(4) .skills .nodeJs-icon {
+  color: #00f260;
+  font-size: 4em;
+  position: absolute;
+  left: 0;
+}
+
+section:nth-of-type(4) .skills .nodeJs-icon {
+  color: #00f260;
+  font-size: 4em;
+  position: absolute;
+  left: 0;
+}
+
+section:nth-of-type(4) .skills .nodeJs-icon {
+  color: #00f260;
+  font-size: 4em;
+  position: absolute;
+  left: 0;
+}
+
+section:nth-of-type(4) .skills .nodeJs-icon {
+  color: #00f260;
+  font-size: 4em;
+  position: absolute;
+  left: 0;
+}
+
+section:nth-of-type(4) .skills .nodeJs-span {
+  position: absolute;
+  right: -15px;
+  top: -10px;
+  font-size: 3em;
+  color: #00f260;
+  font-weight: bold;
+}
+
+section:nth-of-type(4) .skills .percent {
+  position: relative;
+  width: 70%;
+  height: 50px;
+  margin-left: 2vmin;
+  border-radius: 20px;
+  background-color: #ddd;
+}
+
+section:nth-of-type(4) .skills .percent .nodeJs-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 100%;
+  border-radius: 20px;
+  background: -webkit-gradient(linear, right top, left top, from(#00f260), to(#0575e6));
+  background: linear-gradient(to left, #00f260, #0575e6);
   -webkit-animation: bars 3s ease-in-out;
           animation: bars 3s ease-in-out;
 }

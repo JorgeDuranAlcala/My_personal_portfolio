@@ -2,18 +2,18 @@ import * as React from "react";
 import Post from "../Post/Post";
 import getContentfulData from "../../utils/getContentfulData";
 import profile from "../../assets/img/profile1.jpg";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHtml5 } from "@fortawesome/fontawesome-free-brands";
+import { faHtml5, faCss3, faJs, faReact, faPhp, faNodeJs } from "@fortawesome/fontawesome-free-brands";
+import SkillBar from "../Skills-bar/SkillBar";
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
-
-
     this.state = {
       articles: [],
     };
   }
+
+
 
   componentDidMount() {
     getContentfulData("post")
@@ -73,13 +73,12 @@ class Home extends React.Component {
         </section>
         <section>
             <h3 className="subtitle-3">My Skills</h3>
-            <div className="skills">
-              <FontAwesomeIcon icon={faHtml5} className="html-icon" ></FontAwesomeIcon>
-              <div className="percent">
-                <div className="progress"></div>
-              </div>
-              <span>80%</span>
-            </div>
+              <SkillBar icon={faHtml5} name="html" />
+              <SkillBar icon={faCss3} name="css" />
+              <SkillBar icon={faJs} name="js" />
+              <SkillBar icon={faReact} name="react"/>
+              <SkillBar icon={faPhp} name="php"/>
+              <SkillBar icon={faNodeJs} name="nodeJs"/>
         </section>
       </>
     );

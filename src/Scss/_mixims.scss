@@ -1,0 +1,61 @@
+@import "./vars";
+
+@mixin icons($color, $name) {
+    .#{$name}-icon {
+        color: $color;
+        font-size: 4em; 
+        position: absolute;
+        left: 0;
+    }
+}
+
+@mixin progress($color, $name) {
+    .#{$name}-progress {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 80%;
+        height: 100%;
+        border-radius: 20px;
+        background: $color;
+        animation: bars 3s ease-in-out;
+    }
+}
+
+@mixin skills($name, $color, $bg) {
+    .skills {
+        padding: 10px 40px;
+        width: 700px;
+        max-height: auto;
+        margin: 20px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+    
+        @include icons($color, #{$name});
+        @include icons($color, #{$name});
+        @include icons($color, #{$name});
+        @include icons($color, #{$name});
+    
+        .#{$name}-span {
+            position: absolute;
+            right: -15px;
+            top: -10px;
+            font-size: 3em;
+            color: $color;
+            font-weight: bold;
+        }
+            
+        .percent {
+            position: relative;
+            width: 70%;
+            height: 50px;
+            margin-left: 2vmin;
+            border-radius: 20px;
+            background-color: #ddd;
+           @include progress($bg, #{$name});
+        }
+    }
+}

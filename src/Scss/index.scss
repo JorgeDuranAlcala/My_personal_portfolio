@@ -1,6 +1,8 @@
 @import "./navbar";
 @import "./vars";
 @import "./wave";
+@import "./mixims";
+@import "./skill_bars";
 
 * {
     margin: 0;
@@ -88,8 +90,9 @@ section:nth-of-type(3) {
 section:nth-of-type(4) {
     position: relative;
     display: flex;
+    height: 200vh !important;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     flex-direction: column;
     .subtitle-3 {
         position: absolute;
@@ -99,49 +102,12 @@ section:nth-of-type(4) {
         font-size: 2em;
     }
 
-    .skills {
-        width: 700px;
-        max-height: auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        position: relative;
-
-        .html-icon {
-            color: brown;
-            font-size: 5em; 
-            position: absolute;
-            left: 0;
-        }
-
-        span {
-            position: absolute;
-            right: 0;
-            font-size: 2em;
-            color: #f12711;
-            font-weight: bold;
-        }
-        
-        .percent {
-            position: relative;
-            width: 70%;
-            height: 50px;
-            margin-left: 2svmin;
-            border-radius: 20px;
-            background-color: #ddd;
-            .progress {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 80%;
-                height: 100%;
-                border-radius: 20px;
-                background: linear-gradient(to right, #f12711, #f5af19);
-                animation: bars 3s ease-in-out;
-            }
-        }
-    }
+    @include skills(html, brown, $html-bar);
+    @include skills(css, blue, $css-bar);
+    @include skills(js, rgba(245, 241, 46, 0.794), $js-bar);
+    @include skills(react, rgb(7, 233, 241), $react-bar);
+    @include skills(php, #333399, $php-bar);
+    @include skills(nodeJs, #00f260, $nodeJs-bar);
 
 }
 
