@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CountUp from "react-countup";
 
-const SkillBar = ({ icon, color, name}) => {
+const SkillBar = ({ icon, color, name, percent}) => {
 
   return (
     <>
@@ -11,7 +11,7 @@ const SkillBar = ({ icon, color, name}) => {
             <div className="percent">
             <div className={`${name}-progress`}></div>
             </div>
-            <span className={`${name}-span`}><CountUp start={0} end={80} duration={3} suffix="%"/></span>
+            <span className={`${name}-span`}><CountUp start={0} end={percent} duration={3} suffix="%"/></span>
         </div>
     </>
   );

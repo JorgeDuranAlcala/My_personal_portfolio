@@ -2,28 +2,26 @@ import React, { Component } from "react";
 
 const classes = {
     container: {
-        position: 'relative',
-        width: '350px',
-        height: '200px',
+        maxWidth: '350px',
         maxHeight: 'auto',
         boxShadow: '0px 2px 25px rgba(0,0,0,0.2)',
         borderRadius: '20px',
         color: 'rgba(0,0,0,0.8)',
-        marginBottom: '15vmin'
+        marginBottom: '15vmin',
     },
     title: {
         fontSize: '1.4em',
         fontWeight: 'bold',
         textAlign: 'center',
-        margin: '4px 20px',
+        padding: '10px 0px'
     },
     desc: {
         textAlign: 'left',
         fontSize: '0.8em',
-        padding: '10px 20px'
+        padding: '20px'
     },
     post_img: {
-        position: 'relative'
+        width: '100%',
     }
 }
 
@@ -42,9 +40,7 @@ class Post extends Component {
         return (
         <div>
             <div style={classes.container}>
-                <div style={classes.post_img}>
-                    <img src="http://picsum.photos/350/200" alt=""/>
-                </div>
+                    <img src="http://picsum.photos/350/200" alt="" style={classes.post_img}/>
                 <h3 style={classes.title}>
                     { title }
                 </h3>

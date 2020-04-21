@@ -62,6 +62,7 @@ nav ul li .link:hover {
 
 /* Color Theme Swatches in Hex */
 /* gradients colors */
+/* List of Vars */
 .wave {
   width: 200%;
   position: absolute;
@@ -138,8 +139,7 @@ nav ul li .link:hover {
 
 /* Color Theme Swatches in Hex */
 /* gradients colors */
-/* Color Theme Swatches in Hex */
-/* gradients colors */
+/* List of Vars */
 * {
   margin: 0;
   padding: 0;
@@ -254,7 +254,7 @@ section:nth-of-type(4) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 200vh !important;
+  background: #1e1e1e;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -269,15 +269,25 @@ section:nth-of-type(4) {
 
 section:nth-of-type(4) .subtitle-3 {
   position: absolute;
-  top: 0;
+  top: 40px;
   text-align: center;
   left: 45%;
-  font-size: 2em;
+  font-size: 2.5em;
+  font-weight: 700;
+  color: #fff;
 }
 
-section:nth-of-type(4) .skills {
+section:nth-of-type(4) .skillBars {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0.625em 20vmin;
+}
+
+section:nth-of-type(4) .skillBars .skills {
   padding: 10px 40px;
-  width: 700px;
+  width: 500px;
   max-height: auto;
   margin: 20px 0px;
   display: -webkit-box;
@@ -296,35 +306,7 @@ section:nth-of-type(4) .skills {
   position: relative;
 }
 
-section:nth-of-type(4) .skills .html-icon {
-  color: brown;
-  font-size: 4em;
-  position: absolute;
-  left: 0;
-}
-
-section:nth-of-type(4) .skills .html-icon {
-  color: brown;
-  font-size: 4em;
-  position: absolute;
-  left: 0;
-}
-
-section:nth-of-type(4) .skills .html-icon {
-  color: brown;
-  font-size: 4em;
-  position: absolute;
-  left: 0;
-}
-
-section:nth-of-type(4) .skills .html-icon {
-  color: brown;
-  font-size: 4em;
-  position: absolute;
-  left: 0;
-}
-
-section:nth-of-type(4) .skills .html-span {
+section:nth-of-type(4) .skillBars .skills .html-span {
   position: absolute;
   right: -15px;
   top: -10px;
@@ -333,7 +315,7 @@ section:nth-of-type(4) .skills .html-span {
   font-weight: bold;
 }
 
-section:nth-of-type(4) .skills .percent {
+section:nth-of-type(4) .skillBars .skills .percent {
   position: relative;
   width: 70%;
   height: 50px;
@@ -342,11 +324,18 @@ section:nth-of-type(4) .skills .percent {
   background-color: #ddd;
 }
 
-section:nth-of-type(4) .skills .percent .html-progress {
+section:nth-of-type(4) .skillBars .html-icon {
+  color: brown;
+  font-size: 4em;
+  position: absolute;
+  left: 0;
+}
+
+section:nth-of-type(4) .skillBars .html-progress {
   position: absolute;
   top: 0;
   left: 0;
-  width: 80%;
+  width: 90%;
   height: 100%;
   border-radius: 20px;
   background: -webkit-gradient(linear, left top, right top, from(#f12711), to(#f5af19));
@@ -355,9 +344,9 @@ section:nth-of-type(4) .skills .percent .html-progress {
           animation: bars 3s ease-in-out;
 }
 
-section:nth-of-type(4) .skills {
+section:nth-of-type(4) .skillBars .skills {
   padding: 10px 40px;
-  width: 700px;
+  width: 500px;
   max-height: auto;
   margin: 20px 0px;
   display: -webkit-box;
@@ -376,35 +365,7 @@ section:nth-of-type(4) .skills {
   position: relative;
 }
 
-section:nth-of-type(4) .skills .css-icon {
-  color: blue;
-  font-size: 4em;
-  position: absolute;
-  left: 0;
-}
-
-section:nth-of-type(4) .skills .css-icon {
-  color: blue;
-  font-size: 4em;
-  position: absolute;
-  left: 0;
-}
-
-section:nth-of-type(4) .skills .css-icon {
-  color: blue;
-  font-size: 4em;
-  position: absolute;
-  left: 0;
-}
-
-section:nth-of-type(4) .skills .css-icon {
-  color: blue;
-  font-size: 4em;
-  position: absolute;
-  left: 0;
-}
-
-section:nth-of-type(4) .skills .css-span {
+section:nth-of-type(4) .skillBars .skills .css-span {
   position: absolute;
   right: -15px;
   top: -10px;
@@ -413,7 +374,7 @@ section:nth-of-type(4) .skills .css-span {
   font-weight: bold;
 }
 
-section:nth-of-type(4) .skills .percent {
+section:nth-of-type(4) .skillBars .skills .percent {
   position: relative;
   width: 70%;
   height: 50px;
@@ -422,22 +383,29 @@ section:nth-of-type(4) .skills .percent {
   background-color: #ddd;
 }
 
-section:nth-of-type(4) .skills .percent .css-progress {
+section:nth-of-type(4) .skillBars .css-icon {
+  color: blue;
+  font-size: 4em;
+  position: absolute;
+  left: 0;
+}
+
+section:nth-of-type(4) .skillBars .css-progress {
   position: absolute;
   top: 0;
   left: 0;
-  width: 80%;
+  width: 85%;
   height: 100%;
   border-radius: 20px;
-  background: -webkit-gradient(linear, left top, right top, from(#084be6), to(#0b73fba6));
-  background: linear-gradient(to right, #084be6, #0b73fba6);
+  background: -webkit-gradient(linear, left top, right top, from(#084be6), to(#0bd7fb));
+  background: linear-gradient(to right, #084be6, #0bd7fb);
   -webkit-animation: bars 3s ease-in-out;
           animation: bars 3s ease-in-out;
 }
 
-section:nth-of-type(4) .skills {
+section:nth-of-type(4) .skillBars .skills {
   padding: 10px 40px;
-  width: 700px;
+  width: 500px;
   max-height: auto;
   margin: 20px 0px;
   display: -webkit-box;
@@ -456,35 +424,7 @@ section:nth-of-type(4) .skills {
   position: relative;
 }
 
-section:nth-of-type(4) .skills .js-icon {
-  color: rgba(245, 241, 46, 0.794);
-  font-size: 4em;
-  position: absolute;
-  left: 0;
-}
-
-section:nth-of-type(4) .skills .js-icon {
-  color: rgba(245, 241, 46, 0.794);
-  font-size: 4em;
-  position: absolute;
-  left: 0;
-}
-
-section:nth-of-type(4) .skills .js-icon {
-  color: rgba(245, 241, 46, 0.794);
-  font-size: 4em;
-  position: absolute;
-  left: 0;
-}
-
-section:nth-of-type(4) .skills .js-icon {
-  color: rgba(245, 241, 46, 0.794);
-  font-size: 4em;
-  position: absolute;
-  left: 0;
-}
-
-section:nth-of-type(4) .skills .js-span {
+section:nth-of-type(4) .skillBars .skills .js-span {
   position: absolute;
   right: -15px;
   top: -10px;
@@ -493,7 +433,7 @@ section:nth-of-type(4) .skills .js-span {
   font-weight: bold;
 }
 
-section:nth-of-type(4) .skills .percent {
+section:nth-of-type(4) .skillBars .skills .percent {
   position: relative;
   width: 70%;
   height: 50px;
@@ -502,22 +442,29 @@ section:nth-of-type(4) .skills .percent {
   background-color: #ddd;
 }
 
-section:nth-of-type(4) .skills .percent .js-progress {
+section:nth-of-type(4) .skillBars .js-icon {
+  color: rgba(245, 241, 46, 0.794);
+  font-size: 4em;
+  position: absolute;
+  left: 0;
+}
+
+section:nth-of-type(4) .skillBars .js-progress {
   position: absolute;
   top: 0;
   left: 0;
-  width: 80%;
+  width: 85%;
   height: 100%;
   border-radius: 20px;
-  background: -webkit-gradient(linear, left top, right top, from(#e5f50c), to(#ecfb0df8));
-  background: linear-gradient(to right, #e5f50c, #ecfb0df8);
+  background: -webkit-gradient(linear, right top, left top, from(#a0fb0d), to(#f4f803));
+  background: linear-gradient(to left, #a0fb0d, #f4f803);
   -webkit-animation: bars 3s ease-in-out;
           animation: bars 3s ease-in-out;
 }
 
-section:nth-of-type(4) .skills {
+section:nth-of-type(4) .skillBars .skills {
   padding: 10px 40px;
-  width: 700px;
+  width: 500px;
   max-height: auto;
   margin: 20px 0px;
   display: -webkit-box;
@@ -536,35 +483,7 @@ section:nth-of-type(4) .skills {
   position: relative;
 }
 
-section:nth-of-type(4) .skills .react-icon {
-  color: #07e9f1;
-  font-size: 4em;
-  position: absolute;
-  left: 0;
-}
-
-section:nth-of-type(4) .skills .react-icon {
-  color: #07e9f1;
-  font-size: 4em;
-  position: absolute;
-  left: 0;
-}
-
-section:nth-of-type(4) .skills .react-icon {
-  color: #07e9f1;
-  font-size: 4em;
-  position: absolute;
-  left: 0;
-}
-
-section:nth-of-type(4) .skills .react-icon {
-  color: #07e9f1;
-  font-size: 4em;
-  position: absolute;
-  left: 0;
-}
-
-section:nth-of-type(4) .skills .react-span {
+section:nth-of-type(4) .skillBars .skills .react-span {
   position: absolute;
   right: -15px;
   top: -10px;
@@ -573,7 +492,7 @@ section:nth-of-type(4) .skills .react-span {
   font-weight: bold;
 }
 
-section:nth-of-type(4) .skills .percent {
+section:nth-of-type(4) .skillBars .skills .percent {
   position: relative;
   width: 70%;
   height: 50px;
@@ -582,11 +501,18 @@ section:nth-of-type(4) .skills .percent {
   background-color: #ddd;
 }
 
-section:nth-of-type(4) .skills .percent .react-progress {
+section:nth-of-type(4) .skillBars .react-icon {
+  color: #07e9f1;
+  font-size: 4em;
+  position: absolute;
+  left: 0;
+}
+
+section:nth-of-type(4) .skillBars .react-progress {
   position: absolute;
   top: 0;
   left: 0;
-  width: 80%;
+  width: 70%;
   height: 100%;
   border-radius: 20px;
   background: -webkit-gradient(linear, left top, right top, from(#11d7f1), to(#19f5c5));
@@ -595,9 +521,9 @@ section:nth-of-type(4) .skills .percent .react-progress {
           animation: bars 3s ease-in-out;
 }
 
-section:nth-of-type(4) .skills {
+section:nth-of-type(4) .skillBars .skills {
   padding: 10px 40px;
-  width: 700px;
+  width: 500px;
   max-height: auto;
   margin: 20px 0px;
   display: -webkit-box;
@@ -616,35 +542,7 @@ section:nth-of-type(4) .skills {
   position: relative;
 }
 
-section:nth-of-type(4) .skills .php-icon {
-  color: #333399;
-  font-size: 4em;
-  position: absolute;
-  left: 0;
-}
-
-section:nth-of-type(4) .skills .php-icon {
-  color: #333399;
-  font-size: 4em;
-  position: absolute;
-  left: 0;
-}
-
-section:nth-of-type(4) .skills .php-icon {
-  color: #333399;
-  font-size: 4em;
-  position: absolute;
-  left: 0;
-}
-
-section:nth-of-type(4) .skills .php-icon {
-  color: #333399;
-  font-size: 4em;
-  position: absolute;
-  left: 0;
-}
-
-section:nth-of-type(4) .skills .php-span {
+section:nth-of-type(4) .skillBars .skills .php-span {
   position: absolute;
   right: -15px;
   top: -10px;
@@ -653,7 +551,7 @@ section:nth-of-type(4) .skills .php-span {
   font-weight: bold;
 }
 
-section:nth-of-type(4) .skills .percent {
+section:nth-of-type(4) .skillBars .skills .percent {
   position: relative;
   width: 70%;
   height: 50px;
@@ -662,11 +560,18 @@ section:nth-of-type(4) .skills .percent {
   background-color: #ddd;
 }
 
-section:nth-of-type(4) .skills .percent .php-progress {
+section:nth-of-type(4) .skillBars .php-icon {
+  color: #333399;
+  font-size: 4em;
+  position: absolute;
+  left: 0;
+}
+
+section:nth-of-type(4) .skillBars .php-progress {
   position: absolute;
   top: 0;
   left: 0;
-  width: 80%;
+  width: 60%;
   height: 100%;
   border-radius: 20px;
   background: -webkit-gradient(linear, right top, left top, from(#ff00cc), to(#333399));
@@ -675,9 +580,9 @@ section:nth-of-type(4) .skills .percent .php-progress {
           animation: bars 3s ease-in-out;
 }
 
-section:nth-of-type(4) .skills {
+section:nth-of-type(4) .skillBars .skills {
   padding: 10px 40px;
-  width: 700px;
+  width: 500px;
   max-height: auto;
   margin: 20px 0px;
   display: -webkit-box;
@@ -696,35 +601,7 @@ section:nth-of-type(4) .skills {
   position: relative;
 }
 
-section:nth-of-type(4) .skills .nodeJs-icon {
-  color: #00f260;
-  font-size: 4em;
-  position: absolute;
-  left: 0;
-}
-
-section:nth-of-type(4) .skills .nodeJs-icon {
-  color: #00f260;
-  font-size: 4em;
-  position: absolute;
-  left: 0;
-}
-
-section:nth-of-type(4) .skills .nodeJs-icon {
-  color: #00f260;
-  font-size: 4em;
-  position: absolute;
-  left: 0;
-}
-
-section:nth-of-type(4) .skills .nodeJs-icon {
-  color: #00f260;
-  font-size: 4em;
-  position: absolute;
-  left: 0;
-}
-
-section:nth-of-type(4) .skills .nodeJs-span {
+section:nth-of-type(4) .skillBars .skills .nodeJs-span {
   position: absolute;
   right: -15px;
   top: -10px;
@@ -733,7 +610,7 @@ section:nth-of-type(4) .skills .nodeJs-span {
   font-weight: bold;
 }
 
-section:nth-of-type(4) .skills .percent {
+section:nth-of-type(4) .skillBars .skills .percent {
   position: relative;
   width: 70%;
   height: 50px;
@@ -742,11 +619,18 @@ section:nth-of-type(4) .skills .percent {
   background-color: #ddd;
 }
 
-section:nth-of-type(4) .skills .percent .nodeJs-progress {
+section:nth-of-type(4) .skillBars .nodeJs-icon {
+  color: #00f260;
+  font-size: 4em;
+  position: absolute;
+  left: 0;
+}
+
+section:nth-of-type(4) .skillBars .nodeJs-progress {
   position: absolute;
   top: 0;
   left: 0;
-  width: 80%;
+  width: 75%;
   height: 100%;
   border-radius: 20px;
   background: -webkit-gradient(linear, right top, left top, from(#00f260), to(#0575e6));

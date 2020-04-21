@@ -9,12 +9,12 @@
     }
 }
 
-@mixin progress($color, $name) {
+@mixin progress($color, $name, $percent) {
     .#{$name}-progress {
         position: absolute;
         top: 0;
         left: 0;
-        width: 80%;
+        width: $percent;
         height: 100%;
         border-radius: 20px;
         background: $color;
@@ -25,7 +25,7 @@
 @mixin skills($name, $color, $bg) {
     .skills {
         padding: 10px 40px;
-        width: 700px;
+        width: 500px;
         max-height: auto;
         margin: 20px 0px;
         display: flex;
@@ -33,11 +33,6 @@
         justify-content: center;
         flex-direction: column;
         position: relative;
-    
-        @include icons($color, #{$name});
-        @include icons($color, #{$name});
-        @include icons($color, #{$name});
-        @include icons($color, #{$name});
     
         .#{$name}-span {
             position: absolute;
@@ -55,7 +50,6 @@
             margin-left: 2vmin;
             border-radius: 20px;
             background-color: #ddd;
-           @include progress($bg, #{$name});
         }
     }
 }

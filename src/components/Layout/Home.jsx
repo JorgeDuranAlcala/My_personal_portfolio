@@ -10,7 +10,12 @@ class Home extends React.Component {
     super(props);
     this.state = {
       articles: [],
+      showUp: false
     };
+
+    this.icons = [faHtml5, faCss3, faJs, faReact, faPhp, faNodeJs ]
+    this.names = ['html', 'css', 'js', 'react', 'php', 'nodeJs']
+    this.percents = [90,85,85,70,60,75];
   }
 
 
@@ -21,16 +26,15 @@ class Home extends React.Component {
         this.setState({ articles: res });
       })
       .catch((error) => console.log(error));
+      this.onScrollEffect();
+  }
 
-      window.addEventListener('scroll', () => {
-          if(window.scrollY > 1600) {
-            console.log("Ya se lo que estas pensando GENIO")
-          }
-      })
+  onScrollEffect() {
+    window.addEventListener('scroll', () => (window.scrollY > 1600) ? this.setState({ showUp: true}) : this.setState({ showUp: false}))
   }
 
   render() {
-    const { articles } = this.state;
+    const { articles, showUp } = this.state;
 
     return (
       <>
@@ -73,12 +77,16 @@ class Home extends React.Component {
         </section>
         <section>
             <h3 className="subtitle-3">My Skills</h3>
-              <SkillBar icon={faHtml5} name="html" />
-              <SkillBar icon={faCss3} name="css" />
-              <SkillBar icon={faJs} name="js" />
-              <SkillBar icon={faReact} name="react"/>
-              <SkillBar icon={faPhp} name="php"/>
-              <SkillBar icon={faNodeJs} name="nodeJs"/>
+            <div className="skillBars">
+              { showUp && <>{this.icons.map( (icon, index ) => 
+              (
+              <SkillBar 
+              icon={icon} 
+              key={index} 
+              name={this.names[index]} 
+              percent={this.percents[index]} />
+              ))}</> }
+            </div>
         </section>
       </>
     );

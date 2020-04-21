@@ -2,7 +2,6 @@
 @import "./vars";
 @import "./wave";
 @import "./mixims";
-@import "./skill_bars";
 
 * {
     margin: 0;
@@ -90,24 +89,33 @@ section:nth-of-type(3) {
 section:nth-of-type(4) {
     position: relative;
     display: flex;
-    height: 200vh !important;
+    background: #1e1e1e;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     .subtitle-3 {
         position: absolute;
-        top: 0;
+        top: 40px;
         text-align: center;
         left: 45%;
-        font-size: 2em;
+        font-size: 2.5em;
+        font-weight: 700;
+        color: #fff;
     }
 
-    @include skills(html, brown, $html-bar);
-    @include skills(css, blue, $css-bar);
-    @include skills(js, rgba(245, 241, 46, 0.794), $js-bar);
-    @include skills(react, rgb(7, 233, 241), $react-bar);
-    @include skills(php, #333399, $php-bar);
-    @include skills(nodeJs, #00f260, $nodeJs-bar);
+    .skillBars {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 0.625em 20vmin;
+       
+        @each $name, $color, $bg, $percent in $colors{
+            @include skills($name, $color, $bg);
+            @include icons($color, $name);
+            @include progress($bg, $name, $percent);
+        } 
+
+     
+    }
 
 }
 
