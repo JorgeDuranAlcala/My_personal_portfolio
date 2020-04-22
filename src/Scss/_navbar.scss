@@ -28,8 +28,11 @@ nav {
 .logo {
     float: left;
     padding: 10px 10px;
-    color: #fff;
     font-size: 2em;
+    .link {
+        text-decoration: none;
+        color: #fff;
+    }
 }
 
 .wolf-icon {

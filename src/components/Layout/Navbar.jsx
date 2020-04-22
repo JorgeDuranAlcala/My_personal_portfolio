@@ -32,7 +32,7 @@ class Navbar extends React.Component {
                     <div className="wolf-icon">
                         <img src={wolfChange ? wolfBlue : wolf} alt="wolf-icon"/>
                     </div>
-                    <h3 className="logo">Jorge Duran</h3>
+                    <h3 className="logo"><Link className="link" to="/">Jorge Duran</Link></h3>
                     <ul>
                         <li>
                             <Link className="link" to="/">Blog</Link>

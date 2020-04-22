@@ -1,0 +1,54 @@
+.aboutMe {
+    position: relative;
+    font-family: 'Lobster';
+    .about {
+        position: absolute;
+       left: 145%;
+       width: 700px;
+       text-align: center;
+       h3 {
+           padding: 8vmin 4vmin;
+           font-size: 2.2em;
+       }
+       p {
+           text-align: left;
+           line-height: 35px;
+           font-size: 1.2em;
+       }
+    }
+
+    .personal_data {
+        width: 300px;
+        margin-top: 4vmin;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        h5 { font-size: 1.4em; }
+        a {
+            display: flex;
+            width: 50%;
+            align-items: center;
+            font-size: 1.2em;
+            justify-content: center;
+            color: rgba(0,0,0,0.8);
+            .icon {
+                margin: 0 10px;
+            }
+        }
+    }
+
+    .profile {
+        width: 300px;
+        position: absolute;
+        top: 40px;
+        left: 12%;
+        img {
+            width: 100%;
+            border-radius: 50%;
+        }
+    }
+}
+

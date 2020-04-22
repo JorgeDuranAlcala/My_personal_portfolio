@@ -10,7 +10,7 @@ const getContentfulData = async (content_type) => {
     })
 
     const res = await client.getEntries({content_type, limit: 3} );
-    console.log(res.limit)
+    
     return res.items;
 }
 

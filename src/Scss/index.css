@@ -32,8 +32,12 @@ nav ul li .link:hover {
 .logo {
   float: left;
   padding: 10px 10px;
-  color: #fff;
   font-size: 2em;
+}
+
+.logo .link {
+  text-decoration: none;
+  color: #fff;
 }
 
 .wolf-icon {
@@ -140,17 +144,9 @@ nav ul li .link:hover {
 /* Color Theme Swatches in Hex */
 /* gradients colors */
 /* List of Vars */
-* {
-  margin: 0;
-  padding: 0;
-}
-
-body, html {
-  overflow-x: hidden;
-}
-
 .aboutMe {
   position: relative;
+  font-family: 'Lobster';
 }
 
 .aboutMe .about {
@@ -171,6 +167,49 @@ body, html {
   font-size: 1.2em;
 }
 
+.aboutMe .personal_data {
+  width: 300px;
+  margin-top: 4vmin;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.aboutMe .personal_data h5 {
+  font-size: 1.4em;
+}
+
+.aboutMe .personal_data a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.2em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.aboutMe .personal_data a .icon {
+  margin: 0 10px;
+}
+
 .aboutMe .profile {
   width: 300px;
   position: absolute;
@@ -183,9 +222,21 @@ body, html {
   border-radius: 50%;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body, html {
+  overflow-x: hidden;
+}
+
 section {
   height: 100vh;
   width: 100%;
+  overflow: hidden;
 }
 
 section:nth-of-type(1) {

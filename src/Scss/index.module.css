@@ -1,0 +1,244 @@
+nav {
+  width: 100%;
+  position: fixed;
+  padding: 20px 10px;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li .link {
+  display: block;
+  float: right;
+  font-size: 1em;
+  padding: 20px 20px;
+  color: #fff;
+  text-decoration: none;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  font-weight: bold;
+  text-align: center;
+}
+
+nav ul li .link:hover {
+  color: #cccccc;
+}
+
+.logo {
+  float: left;
+  padding: 10px 10px;
+  font-size: 2em;
+}
+
+.logo .link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.wolf-icon {
+  width: 50px;
+  float: left;
+  margin: 10px 10px;
+}
+
+.wolf-icon img {
+  width: 100%;
+}
+
+.sticky {
+  background-color: #fff;
+  padding: 8px 20px;
+  z-index: 9999;
+}
+
+.sticky .link {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.sticky .logo {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* Color Theme Swatches in Hex */
+/* gradients colors */
+/* List of Vars */
+.wave {
+  width: 200%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background: url(../assets/img/svgs/wave_2.svg);
+  background-position: 0 bottom;
+  -webkit-transform-origin: center bottom;
+          transform-origin: center bottom;
+  background-repeat: repeat-x;
+}
+
+.wave_1 {
+  -webkit-animation: aniwave1 50s infinite linear;
+          animation: aniwave1 50s infinite linear;
+  opacity: 1;
+  z-index: 1000;
+}
+
+.wave_2 {
+  -webkit-animation: aniwave1 45s infinite linear;
+          animation: aniwave1 45s infinite linear;
+  opacity: .5;
+  z-index: 997;
+}
+
+.wave_3 {
+  -webkit-animation: aniwave1 35s infinite linear;
+          animation: aniwave1 35s infinite linear;
+  opacity: .75;
+  z-index: 998;
+}
+
+.wave_4 {
+  opacity: .80;
+  -webkit-animation: aniwave1 30s infinite linear;
+          animation: aniwave1 30s infinite linear;
+  z-index: 999;
+}
+
+/* background-color: #0A0B26; */
+/* #221F73 */
+@-webkit-keyframes aniwave1 {
+  0% {
+    -webkit-transform: translateX(0%) translateZ(0) scaleY(0.2);
+            transform: translateX(0%) translateZ(0) scaleY(0.2);
+  }
+  50% {
+    -webkit-transform: translateX(-25%) translateZ(0) scaleY(0.4);
+            transform: translateX(-25%) translateZ(0) scaleY(0.4);
+  }
+  100% {
+    -webkit-transform: translateX(-50%) translateZ(0) scaleY(0.5);
+            transform: translateX(-50%) translateZ(0) scaleY(0.5);
+  }
+}
+@keyframes aniwave1 {
+  0% {
+    -webkit-transform: translateX(0%) translateZ(0) scaleY(0.2);
+            transform: translateX(0%) translateZ(0) scaleY(0.2);
+  }
+  50% {
+    -webkit-transform: translateX(-25%) translateZ(0) scaleY(0.4);
+            transform: translateX(-25%) translateZ(0) scaleY(0.4);
+  }
+  100% {
+    -webkit-transform: translateX(-50%) translateZ(0) scaleY(0.5);
+            transform: translateX(-50%) translateZ(0) scaleY(0.5);
+  }
+}
+
+/* Color Theme Swatches in Hex */
+/* gradients colors */
+/* List of Vars */
+.aboutMe {
+  position: relative;
+  font-family: 'Lobster';
+  -webkit-animation: fadeIn 1.5s ease-in-out linear;
+          animation: fadeIn 1.5s ease-in-out linear;
+}
+
+.aboutMe .about {
+  position: absolute;
+  left: 145%;
+  width: 700px;
+  text-align: center;
+}
+
+.aboutMe .about h3 {
+  padding: 8vmin 4vmin;
+  font-size: 2.2em;
+}
+
+.aboutMe .about p {
+  text-align: left;
+  line-height: 35px;
+  font-size: 1.2em;
+}
+
+.aboutMe .personal_data {
+  width: 300px;
+  margin-top: 4vmin;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.aboutMe .personal_data h5 {
+  font-size: 1.4em;
+}
+
+.aboutMe .personal_data a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.2em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.aboutMe .personal_data a .icon {
+  margin: 0 10px;
+}
+
+.aboutMe .profile {
+  width: 300px;
+  position: absolute;
+  top: 40px;
+  left: 12%;
+}
+
+.aboutMe .profile img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=index.module.css.map */
