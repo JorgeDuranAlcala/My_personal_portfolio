@@ -1,11 +1,10 @@
 nav {
   width: 100%;
   position: fixed;
+  background: inherit;
   padding: 20px 10px;
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
-  -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 nav ul li {
@@ -54,14 +53,20 @@ nav ul li .link:hover {
   background-color: #fff;
   padding: 8px 20px;
   z-index: 9999;
+  -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .sticky .link {
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(0, 0, 0, 0.8) !important;
 }
 
 .sticky .logo {
   color: rgba(0, 0, 0, 0.8);
+}
+
+.linkAlter {
+  color: rgba(0, 0, 0, 0.8) !important;
 }
 
 /* Color Theme Swatches in Hex */
@@ -147,6 +152,8 @@ nav ul li .link:hover {
 .aboutMe {
   position: relative;
   font-family: 'Lobster';
+  overflow: hidden;
+  color: #232323;
 }
 
 .aboutMe .about {
@@ -184,7 +191,7 @@ nav ul li .link:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  text-align: center;
+  text-align: left;
 }
 
 .aboutMe .personal_data h5 {
@@ -207,7 +214,8 @@ nav ul li .link:hover {
 }
 
 .aboutMe .personal_data a .icon {
-  margin: 0 10px;
+  margin: 0 5px;
+  text-align: left;
 }
 
 .aboutMe .profile {
@@ -220,6 +228,53 @@ nav ul li .link:hover {
 .aboutMe .profile img {
   width: 100%;
   border-radius: 50%;
+}
+
+.grid_list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-gap: 6vmin;
+  -ms-grid-rows: (1fr)[auto];
+      grid-template-rows: repeat(auto, 1fr);
+}
+
+.blog_title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 230px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.blog_post {
+  -webkit-animation: fadeIn .5s ease;
+          animation: fadeIn .5s ease;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 * {
@@ -280,7 +335,7 @@ section:nth-of-type(1) .hero p {
   font-size: 2em;
 }
 
-section:nth-of-type(3) {
+.post_section {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -288,19 +343,36 @@ section:nth-of-type(3) {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.post_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  width: 100%;
+  height: 80%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-section:nth-of-type(3) .subtitle-2 {
-  position: absolute;
-  top: 0;
+.post_subtitle {
+  font-size: 2.5em;
+  padding: 0px 10px;
   text-align: center;
-  left: 40%;
-  font-size: 2em;
+  margin: 10vmin 0;
 }
 
-section:nth-of-type(4) {
+section:nth-of-type(3) {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -318,7 +390,7 @@ section:nth-of-type(4) {
           flex-direction: column;
 }
 
-section:nth-of-type(4) .subtitle-3 {
+section:nth-of-type(3) .subtitle-3 {
   position: absolute;
   top: 40px;
   text-align: center;
@@ -328,7 +400,7 @@ section:nth-of-type(4) .subtitle-3 {
   color: #fff;
 }
 
-section:nth-of-type(4) .skillBars {
+section:nth-of-type(3) .skillBars {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[2];
@@ -336,7 +408,7 @@ section:nth-of-type(4) .skillBars {
   grid-gap: 0.625em 20vmin;
 }
 
-section:nth-of-type(4) .skillBars .skills {
+section:nth-of-type(3) .skillBars .skills {
   padding: 10px 40px;
   width: 500px;
   max-height: auto;
@@ -357,7 +429,7 @@ section:nth-of-type(4) .skillBars .skills {
   position: relative;
 }
 
-section:nth-of-type(4) .skillBars .skills .html-span {
+section:nth-of-type(3) .skillBars .skills .html-span {
   position: absolute;
   right: -15px;
   top: -10px;
@@ -366,7 +438,7 @@ section:nth-of-type(4) .skillBars .skills .html-span {
   font-weight: bold;
 }
 
-section:nth-of-type(4) .skillBars .skills .percent {
+section:nth-of-type(3) .skillBars .skills .percent {
   position: relative;
   width: 70%;
   height: 50px;
@@ -375,14 +447,14 @@ section:nth-of-type(4) .skillBars .skills .percent {
   background-color: #ddd;
 }
 
-section:nth-of-type(4) .skillBars .html-icon {
+section:nth-of-type(3) .skillBars .html-icon {
   color: brown;
   font-size: 4em;
   position: absolute;
   left: 0;
 }
 
-section:nth-of-type(4) .skillBars .html-progress {
+section:nth-of-type(3) .skillBars .html-progress {
   position: absolute;
   top: 0;
   left: 0;
@@ -395,7 +467,7 @@ section:nth-of-type(4) .skillBars .html-progress {
           animation: bars 3s ease-in-out;
 }
 
-section:nth-of-type(4) .skillBars .skills {
+section:nth-of-type(3) .skillBars .skills {
   padding: 10px 40px;
   width: 500px;
   max-height: auto;
@@ -416,7 +488,7 @@ section:nth-of-type(4) .skillBars .skills {
   position: relative;
 }
 
-section:nth-of-type(4) .skillBars .skills .css-span {
+section:nth-of-type(3) .skillBars .skills .css-span {
   position: absolute;
   right: -15px;
   top: -10px;
@@ -425,7 +497,7 @@ section:nth-of-type(4) .skillBars .skills .css-span {
   font-weight: bold;
 }
 
-section:nth-of-type(4) .skillBars .skills .percent {
+section:nth-of-type(3) .skillBars .skills .percent {
   position: relative;
   width: 70%;
   height: 50px;
@@ -434,14 +506,14 @@ section:nth-of-type(4) .skillBars .skills .percent {
   background-color: #ddd;
 }
 
-section:nth-of-type(4) .skillBars .css-icon {
+section:nth-of-type(3) .skillBars .css-icon {
   color: blue;
   font-size: 4em;
   position: absolute;
   left: 0;
 }
 
-section:nth-of-type(4) .skillBars .css-progress {
+section:nth-of-type(3) .skillBars .css-progress {
   position: absolute;
   top: 0;
   left: 0;
@@ -454,7 +526,7 @@ section:nth-of-type(4) .skillBars .css-progress {
           animation: bars 3s ease-in-out;
 }
 
-section:nth-of-type(4) .skillBars .skills {
+section:nth-of-type(3) .skillBars .skills {
   padding: 10px 40px;
   width: 500px;
   max-height: auto;
@@ -475,7 +547,7 @@ section:nth-of-type(4) .skillBars .skills {
   position: relative;
 }
 
-section:nth-of-type(4) .skillBars .skills .js-span {
+section:nth-of-type(3) .skillBars .skills .js-span {
   position: absolute;
   right: -15px;
   top: -10px;
@@ -484,7 +556,7 @@ section:nth-of-type(4) .skillBars .skills .js-span {
   font-weight: bold;
 }
 
-section:nth-of-type(4) .skillBars .skills .percent {
+section:nth-of-type(3) .skillBars .skills .percent {
   position: relative;
   width: 70%;
   height: 50px;
@@ -493,14 +565,14 @@ section:nth-of-type(4) .skillBars .skills .percent {
   background-color: #ddd;
 }
 
-section:nth-of-type(4) .skillBars .js-icon {
+section:nth-of-type(3) .skillBars .js-icon {
   color: rgba(245, 241, 46, 0.794);
   font-size: 4em;
   position: absolute;
   left: 0;
 }
 
-section:nth-of-type(4) .skillBars .js-progress {
+section:nth-of-type(3) .skillBars .js-progress {
   position: absolute;
   top: 0;
   left: 0;
@@ -513,7 +585,7 @@ section:nth-of-type(4) .skillBars .js-progress {
           animation: bars 3s ease-in-out;
 }
 
-section:nth-of-type(4) .skillBars .skills {
+section:nth-of-type(3) .skillBars .skills {
   padding: 10px 40px;
   width: 500px;
   max-height: auto;
@@ -534,7 +606,7 @@ section:nth-of-type(4) .skillBars .skills {
   position: relative;
 }
 
-section:nth-of-type(4) .skillBars .skills .react-span {
+section:nth-of-type(3) .skillBars .skills .react-span {
   position: absolute;
   right: -15px;
   top: -10px;
@@ -543,7 +615,7 @@ section:nth-of-type(4) .skillBars .skills .react-span {
   font-weight: bold;
 }
 
-section:nth-of-type(4) .skillBars .skills .percent {
+section:nth-of-type(3) .skillBars .skills .percent {
   position: relative;
   width: 70%;
   height: 50px;
@@ -552,14 +624,14 @@ section:nth-of-type(4) .skillBars .skills .percent {
   background-color: #ddd;
 }
 
-section:nth-of-type(4) .skillBars .react-icon {
+section:nth-of-type(3) .skillBars .react-icon {
   color: #07e9f1;
   font-size: 4em;
   position: absolute;
   left: 0;
 }
 
-section:nth-of-type(4) .skillBars .react-progress {
+section:nth-of-type(3) .skillBars .react-progress {
   position: absolute;
   top: 0;
   left: 0;
@@ -572,7 +644,7 @@ section:nth-of-type(4) .skillBars .react-progress {
           animation: bars 3s ease-in-out;
 }
 
-section:nth-of-type(4) .skillBars .skills {
+section:nth-of-type(3) .skillBars .skills {
   padding: 10px 40px;
   width: 500px;
   max-height: auto;
@@ -593,7 +665,7 @@ section:nth-of-type(4) .skillBars .skills {
   position: relative;
 }
 
-section:nth-of-type(4) .skillBars .skills .php-span {
+section:nth-of-type(3) .skillBars .skills .php-span {
   position: absolute;
   right: -15px;
   top: -10px;
@@ -602,7 +674,7 @@ section:nth-of-type(4) .skillBars .skills .php-span {
   font-weight: bold;
 }
 
-section:nth-of-type(4) .skillBars .skills .percent {
+section:nth-of-type(3) .skillBars .skills .percent {
   position: relative;
   width: 70%;
   height: 50px;
@@ -611,14 +683,14 @@ section:nth-of-type(4) .skillBars .skills .percent {
   background-color: #ddd;
 }
 
-section:nth-of-type(4) .skillBars .php-icon {
+section:nth-of-type(3) .skillBars .php-icon {
   color: #333399;
   font-size: 4em;
   position: absolute;
   left: 0;
 }
 
-section:nth-of-type(4) .skillBars .php-progress {
+section:nth-of-type(3) .skillBars .php-progress {
   position: absolute;
   top: 0;
   left: 0;
@@ -631,7 +703,7 @@ section:nth-of-type(4) .skillBars .php-progress {
           animation: bars 3s ease-in-out;
 }
 
-section:nth-of-type(4) .skillBars .skills {
+section:nth-of-type(3) .skillBars .skills {
   padding: 10px 40px;
   width: 500px;
   max-height: auto;
@@ -652,7 +724,7 @@ section:nth-of-type(4) .skillBars .skills {
   position: relative;
 }
 
-section:nth-of-type(4) .skillBars .skills .nodeJs-span {
+section:nth-of-type(3) .skillBars .skills .nodeJs-span {
   position: absolute;
   right: -15px;
   top: -10px;
@@ -661,7 +733,7 @@ section:nth-of-type(4) .skillBars .skills .nodeJs-span {
   font-weight: bold;
 }
 
-section:nth-of-type(4) .skillBars .skills .percent {
+section:nth-of-type(3) .skillBars .skills .percent {
   position: relative;
   width: 70%;
   height: 50px;
@@ -670,14 +742,14 @@ section:nth-of-type(4) .skillBars .skills .percent {
   background-color: #ddd;
 }
 
-section:nth-of-type(4) .skillBars .nodeJs-icon {
+section:nth-of-type(3) .skillBars .nodeJs-icon {
   color: #00f260;
   font-size: 4em;
   position: absolute;
   left: 0;
 }
 
-section:nth-of-type(4) .skillBars .nodeJs-progress {
+section:nth-of-type(3) .skillBars .nodeJs-progress {
   position: absolute;
   top: 0;
   left: 0;
@@ -690,12 +762,27 @@ section:nth-of-type(4) .skillBars .nodeJs-progress {
           animation: bars 3s ease-in-out;
 }
 
+.my_card {
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.my_card:hover {
+  -webkit-transform: translateY(-15px);
+          transform: translateY(-15px);
+  -webkit-box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.2) !important;
+          box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* .my_projects {
+    background: url(../assets/img/sky-space.jpg);
+    background-size: cover;
+} */
 @-webkit-keyframes bars {
   from {
     width: 0%;
   }
 }
-
 @keyframes bars {
   from {
     width: 0%;

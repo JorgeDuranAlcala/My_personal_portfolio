@@ -1,11 +1,10 @@
 nav {
   width: 100%;
   position: fixed;
+  background: inherit;
   padding: 20px 10px;
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
-  -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 nav ul li {
@@ -54,14 +53,20 @@ nav ul li .link:hover {
   background-color: #fff;
   padding: 8px 20px;
   z-index: 9999;
+  -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .sticky .link {
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(0, 0, 0, 0.8) !important;
 }
 
 .sticky .logo {
   color: rgba(0, 0, 0, 0.8);
+}
+
+.linkAlter {
+  color: rgba(0, 0, 0, 0.8) !important;
 }
 
 /* Color Theme Swatches in Hex */
@@ -147,8 +152,8 @@ nav ul li .link:hover {
 .aboutMe {
   position: relative;
   font-family: 'Lobster';
-  -webkit-animation: fadeIn 1.5s ease-in-out linear;
-          animation: fadeIn 1.5s ease-in-out linear;
+  overflow: hidden;
+  color: #232323;
 }
 
 .aboutMe .about {
@@ -186,7 +191,7 @@ nav ul li .link:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  text-align: center;
+  text-align: left;
 }
 
 .aboutMe .personal_data h5 {
@@ -209,7 +214,8 @@ nav ul li .link:hover {
 }
 
 .aboutMe .personal_data a .icon {
-  margin: 0 10px;
+  margin: 0 5px;
+  text-align: left;
 }
 
 .aboutMe .profile {
@@ -222,6 +228,35 @@ nav ul li .link:hover {
 .aboutMe .profile img {
   width: 100%;
   border-radius: 50%;
+}
+
+.grid_list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-gap: 6vmin;
+  -ms-grid-rows: (1fr)[auto];
+      grid-template-rows: repeat(auto, 1fr);
+}
+
+.blog_title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 230px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.blog_post {
+  -webkit-animation: fadeIn .5s ease;
+          animation: fadeIn .5s ease;
 }
 
 @-webkit-keyframes fadeIn {

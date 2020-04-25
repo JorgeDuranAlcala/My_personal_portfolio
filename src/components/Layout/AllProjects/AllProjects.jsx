@@ -1,30 +1,28 @@
 import React, { useEffect, useState } from "react";
-import { getContentfulData } from "../../utils/getContentfulData";
-import Project from "../Project/Project";
+import { getContentfulData } from "../../../utils/getContentfulData";
+import Project from "../../Project/Project";
 
 const classes = {
   container: {
-    background: "#fff",
+    width: "100%",
+    height: "100vh",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    flexDirection: "column",
-  },
-  projectsList: {
+    flexDirection: 'column',
+    padding: '20mvin 0vmin'
+},
+myProjects_list: {
+    width: '100%',
+    height: '80%',
     display: "flex",
     justifyContent: "space-around",
-    width: "100%",
-    height: "80%",
     alignItems: "center",
-  },
-  title: {
-    marginBottom: "5vmin",
-    padding: "40px 10px",
-    fontSize: "2.5em",
-  },
+    marginTop: '12vmin'
+  }
 };
 
-const SectionFive = () => {
+const AllProjects = () => {
   const [ProjectData, setProjectData] = useState([]);
 
   useEffect(() => {
@@ -55,10 +53,10 @@ const SectionFive = () => {
   }, []);
 
   return (
-    <div>
-      <section style={classes.container}>
-        <h3 style={classes.title}>Most Recent Projects</h3>
-        <div style={classes.projectsList}>
+    <>
+      <div style={classes.container} className="my_projects">
+        <h1>All My Projects</h1>
+        <div style={classes.myProjects_list}>
           {ProjectData.map((item, i) => {
             const { title, desc, url, link } = item;
             return (
@@ -72,9 +70,12 @@ const SectionFive = () => {
             );
           })}
         </div>
-      </section>
-    </div>
+      </div>
+      <div style={classes.container}>
+        <h1>All My Projects</h1>
+      </div>
+    </>
   );
 };
 
-export default SectionFive;
+export default AllProjects;

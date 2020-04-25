@@ -43,21 +43,30 @@ section:nth-of-type(1) {
     }
 }
 
-section:nth-of-type(3) {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    .subtitle-2 {
-        position: absolute;
-        top: 0;
+.post {
+    &_section {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    &_list {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        height: 80%;
+        align-items: center;
+    }
+    &_subtitle {
+        font-size: 2.5em;
+        padding: 0px 10px;
         text-align: center;
-        left: 40%;
-        font-size: 2em;
+        margin: 10vmin 0 ;
     }
 }
 
-section:nth-of-type(4) {
+section:nth-of-type(3) {
     position: relative;
     display: flex;
     background: #1e1e1e;
@@ -89,6 +98,19 @@ section:nth-of-type(4) {
     }
 
 }
+
+.my_card {
+    transition: all .5s ease;
+    &:hover {
+        transform: translateY(-15px);
+        box-shadow: 0px 0px 35px rgba(0,0,0,0.2) !important,
+    }
+}
+
+/* .my_projects {
+    background: url(../assets/img/sky-space.jpg);
+    background-size: cover;
+} */
 
 @keyframes bars {
     from { width: 0%;}
