@@ -30,7 +30,9 @@ const classes = {
     }
 }
 
-const Card = ({ title, desc, url, link, linkName, cls}) => {
+const Card = ({ title, desc, url, link, linkName, cls, id}) => {
+
+    //console.log(id)
 
     return (
         <div>
@@ -46,7 +48,7 @@ const Card = ({ title, desc, url, link, linkName, cls}) => {
 
                 link && 
                 <a 
-                href={link} 
+                href={`${link}/${id}`} 
                 target="_blank" rel="noopener noreferrer"
                 style={classes.link}
                 >

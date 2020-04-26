@@ -38,23 +38,6 @@ class Navbar extends React.Component {
     });
   }
 
-  changeTheme = e => {
-
-      const { name } = e.target;
-      const { themes } = this.state;
-
-      if(myThemes[name] === themes) {
-          this.setState({ themes: myThemes[name] })
-      }
-      else if(name === 'blog') {
-        this.setState({ themes: myThemes[name] })
-      }
-      else {
-        this.setState({ themes: myThemes[name]})
-      }
-
-  }
-
   render() {
     const { sticky, wolfChange, themes } = this.state;
 
@@ -70,7 +53,7 @@ class Navbar extends React.Component {
                 Jorge Duran
               </Link>
             </h3>
-            <Toolbar callBack={this.changeTheme}/>
+            <Toolbar />
           </nav>
         </AppContext.Provider>
       </>

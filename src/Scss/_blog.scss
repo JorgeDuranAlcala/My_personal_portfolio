@@ -16,6 +16,15 @@
     &_post {
         animation: fadeIn .5s ease;
     }
+    &_view {
+        width: 60%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
 }
 
 @keyframes fadeIn {

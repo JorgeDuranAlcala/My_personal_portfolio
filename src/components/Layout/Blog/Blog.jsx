@@ -15,6 +15,7 @@ const styles = {
 };
 
 const Blog = () => {
+
   const [Data, setData] = useState([]);
 
   useEffect(() => {
@@ -34,13 +35,15 @@ const Blog = () => {
       <div className="grid_list">
         {Data.map((item, i) => {
           const { title, desc } = item.fields;
+          const { id } = item.sys;
           let description =
             desc.length > 110 ? desc.slice(0, 110).concat("...") : desc;
           return <Post 
           title={title} 
           desc={description} 
-          key={i} 
+          key={i}
           cls="blog_post"
+          id={id}
           link="/postView"
           ></Post>;
         })}

@@ -259,6 +259,25 @@ nav ul li .link:hover {
           animation: fadeIn .5s ease;
 }
 
+.blog_view {
+  width: 60%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
@@ -760,6 +779,13 @@ section:nth-of-type(3) .skillBars .nodeJs-progress {
   background: linear-gradient(to left, #00f260, #0575e6);
   -webkit-animation: bars 3s ease-in-out;
           animation: bars 3s ease-in-out;
+}
+
+.sec_5 {
+  background-image: url(../assets/img/bgdark.png) !important;
+  background-size: cover !important;
+  background-position: 0 -200px !important;
+  background-repeat: no-repeat !important;
 }
 
 .my_card {

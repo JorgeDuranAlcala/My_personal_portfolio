@@ -1,34 +1,37 @@
 import React, { useContext } from "react";
 import { AppContext } from "../Layout/Navbar";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Toolbar = ({ callBack }) => {
+
+  const location = useLocation();
   const themes = useContext(AppContext);
+  const { pathname } = location;
+  const linksDictionary = [
+    { name: "Blog", to: "/blog" },
+    { name: "allProjects", to: "/allProjects" },
+    { name: "Home", to: "/" },
+  ];
 
   //console.log(themes);
 
   return (
     <ul>
-      <li>
-        <Link to="/blog" className="link" name="blog"  style={{color: themes.color}} onClick={(e) => callBack(e)}>
-          blog
-        </Link>
-      </li>
-      <li>
-        <Link
-          to="/allProjects"
-          className="link"
-          name="projects"
-          onClick={(e) => callBack(e)} style={{color: themes.color}}
-        >
-          All Projects
-        </Link>
-      </li>
-      <li>
-        <Link to="/" className="link" name="home" style={{color: themes.color}} onClick={(e) => callBack(e)}>
-          Home
-        </Link>
-      </li>
+      {linksDictionary.map( (link, i) => {
+        const { name, to } = link;
+        return (
+          <li>
+            <Link
+              key={i}
+              to={to}
+              className="link"
+              style={{ color: pathname === "/" ? themes.color : "#000" }}
+            >
+              {name}
+            </Link>
+          </li>
+        );
+      })}
     </ul>
   );
 };

@@ -11,7 +11,7 @@ class Post extends Component {
     }
     render() { 
 
-        const { title, desc, cls, link } = this.props;
+        const { title, desc, cls, link, id } = this.props;
 
 
         return (
@@ -20,6 +20,7 @@ class Post extends Component {
             title={title} 
             desc={desc} 
             cls={cls}
+            id={id}
             link={link}
             linkName="view Post"
             url="http://picsum.photos/350/200"

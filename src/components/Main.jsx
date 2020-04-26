@@ -36,7 +36,7 @@ class Main extends React.Component {
             <Route path="/blog">
               <Blog/>
             </Route>
-            <Route path="/postView">
+            <Route path="/postView/:id">
               <PostView/>
             </Route>
           </Switch>

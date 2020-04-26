@@ -13,7 +13,7 @@ import {
 } from "@fortawesome/fontawesome-free-brands";
 import { SkillBar, Post, Icon } from "../index";
 import profile from "../../assets/img/profile1.jpg";
-import SectionFive from "./SectionFive";
+import { SectionThree, SectionSix } from "./Sections/index";
 
 class Home extends React.Component {
   constructor(props) {
@@ -106,7 +106,7 @@ class Home extends React.Component {
             </div>
           </div>
         </section>
-        <SectionFive />
+        <SectionThree />
         <section classs="sec_4">
           <h3 className="subtitle-3">My Skills</h3>
           <div className="skillBars">
@@ -129,6 +129,7 @@ class Home extends React.Component {
             })}
           </div>
         </section>
+        <SectionSix/>
       </>
     );
   }

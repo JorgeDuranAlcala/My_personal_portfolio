@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { getContentfulData } from "../../utils/getContentfulData";
-import Project from "../Project/Project";
+import { getContentfulData } from "../../../utils/getContentfulData";
+import Project from "../../Project/Project";
 
 const classes = {
   container: {
-    background: "#fff",
+    background: '#fff',
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -24,7 +24,7 @@ const classes = {
   },
 };
 
-const SectionFive = () => {
+const SectionThree = () => {
   const [ProjectData, setProjectData] = useState([]);
 
   useEffect(() => {
@@ -56,7 +56,7 @@ const SectionFive = () => {
 
   return (
     <div>
-      <section style={classes.container}>
+      <section style={classes.container} className="sec_5">
         <h3 style={classes.title}>Most Recent Projects</h3>
         <div style={classes.projectsList}>
           {ProjectData.map((item, i) => {
@@ -77,4 +77,4 @@ const SectionFive = () => {
   );
 };
 
-export default SectionFive;
+export default SectionThree;
