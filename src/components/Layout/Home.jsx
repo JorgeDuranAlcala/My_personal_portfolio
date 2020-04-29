@@ -128,6 +128,7 @@ class Home extends React.Component {
               return <Post title={title} desc={description} cls="my_card" style={{marginBottom: '15vmin',}} key={i}></Post>;
             })}
           </div>
+          <buttton className="btn my-4">View All Posts</buttton>
         </section>
         <SectionSix/>
       </>

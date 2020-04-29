@@ -6,6 +6,7 @@ import Navbar from "./Layout/Navbar";
 import AllProjects from "./Layout/AllProjects/AllProjects";
 import Blog from "./Layout/Blog/Blog";
 import PostView from "./Layout/Post_view/PostView";
+import Article from "./Article/Article"
 
 export { 
     SkillBar, 
@@ -15,5 +16,6 @@ export {
     AllProjects, 
     Navbar, 
     Blog,
-    PostView
+    PostView,
+    Article
 };

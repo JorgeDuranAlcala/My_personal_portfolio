@@ -1,31 +1,28 @@
 import React, { useEffect, useState } from "react";
 import { getContentById } from "../../../utils/getContentfulData";
 import { useParams } from "react-router-dom";
+import { Article } from "../../index.js"
 
 const PostView = () => {
   const { id } = useParams()
 
-  const [post, setPost] = useState({});
+  const [article, setArticle] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
       const data = await getContentById(id);
-      setPost(data);
-    };
-
+      setArticle(data);
+  };
+    
     fetchData();
   });
-
-  const { title, desc } = post;
+  
+  
+  const { content } = article;
 
   return (
     <div className="blog_view">
-      {post && (
-          <>
-            <h3>{title}</h3>
-            <p>{desc}</p>
-          </>
-        ) }
+      <Article content={content}/>
     </div>
   );
 };

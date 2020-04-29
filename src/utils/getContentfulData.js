@@ -37,8 +37,8 @@ export const getContentById = async id => {
     try {
         
         const res = await client.getEntry(id);
-
-        return res.fields;
+       
+        return res.fields
 
     } catch (error) {
         console.log(error)

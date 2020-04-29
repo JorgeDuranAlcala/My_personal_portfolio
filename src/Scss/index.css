@@ -2,9 +2,11 @@ nav {
   width: 100%;
   position: fixed;
   background: inherit;
-  padding: 20px 10px;
+  padding: 5px 10px;
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
+  -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 nav ul li {
@@ -30,7 +32,7 @@ nav ul li .link:hover {
 
 .logo {
   float: left;
-  padding: 10px 10px;
+  padding: 12px 10px;
   font-size: 2em;
 }
 
@@ -53,8 +55,6 @@ nav ul li .link:hover {
   background-color: #fff;
   padding: 8px 20px;
   z-index: 9999;
-  -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .sticky .link {
@@ -153,6 +153,7 @@ nav ul li .link:hover {
   position: relative;
   font-family: 'Lobster';
   overflow: hidden;
+  background-color: #f1f3f4;
   color: #232323;
 }
 
@@ -175,9 +176,10 @@ nav ul li .link:hover {
 }
 
 .aboutMe .personal_data {
-  width: 300px;
+  position: absolute;
+  width: 280px;
   margin-top: 4vmin;
-  height: 100px;
+  height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -192,6 +194,7 @@ nav ul li .link:hover {
       -ms-flex-align: center;
           align-items: center;
   text-align: left;
+  font-family: 'Poppins';
 }
 
 .aboutMe .personal_data h5 {
@@ -206,7 +209,7 @@ nav ul li .link:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 1.2em;
+  font-size: 1em;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -260,22 +263,17 @@ nav ul li .link:hover {
 }
 
 .blog_view {
-  width: 60%;
-  height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  text-align: center;
+  width: 70%;
+  max-height: auto;
+}
+
+.blog_article {
+  padding: 15vmin 8vmin;
+}
+
+.blog_article pre {
+  background-color: #00040D;
+  color: #19f5c5;
 }
 
 @-webkit-keyframes fadeIn {
@@ -296,6 +294,20 @@ nav ul li .link:hover {
   }
 }
 
+@media screen and (max-width: 850px) {
+  .grid_list {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .grid_list {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -311,10 +323,12 @@ section {
   height: 100vh;
   width: 100%;
   overflow: hidden;
+  font-family: 'Poppins';
 }
 
 section:nth-of-type(1) {
-  background: #fff url(../assets/img/sky-space.jpg);
+  background: url(../assets/img/PersonSky.jpg);
+  background-position: 0 -100px;
   background-size: cover;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -346,6 +360,7 @@ section:nth-of-type(1) .hero {
 section:nth-of-type(1) .hero h1 {
   color: #fff;
   font-size: 4em;
+  font-weight: bold;
 }
 
 section:nth-of-type(1) .hero p {
@@ -369,6 +384,30 @@ section:nth-of-type(1) .hero p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  height: auto !important;
+}
+
+.post_section .btn {
+  width: 250px;
+  padding: 20px 10px;
+  text-align: center;
+  margin: 14vmin !important;
+  font-size: 2em;
+  font-weight: bold;
+  color: #ddd;
+  border: none;
+  border-radius: 10px;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(33, 248, 69, 0.849)), to(rgba(245, 241, 17, 0.937)));
+  background: linear-gradient(to right, rgba(33, 248, 69, 0.849), rgba(245, 241, 17, 0.937));
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.post_section .btn:hover {
+  color: rgba(0, 0, 0, 0.8);
+  width: 320px;
+  -webkit-transform: translateY(-12px);
+          transform: translateY(-12px);
 }
 
 .post_list {
@@ -784,8 +823,14 @@ section:nth-of-type(3) .skillBars .nodeJs-progress {
 .sec_5 {
   background-image: url(../assets/img/bgdark.png) !important;
   background-size: cover !important;
-  background-position: 0 -200px !important;
+  background-position: !important;
   background-repeat: no-repeat !important;
+  height: auto !important;
+}
+
+.sec_5 .btn {
+  margin: 20vmin !important;
+  padding: 2.5vmin 8vmin;
 }
 
 .my_card {

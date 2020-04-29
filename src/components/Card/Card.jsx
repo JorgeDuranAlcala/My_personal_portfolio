@@ -4,7 +4,7 @@ const classes = {
     container: {
         maxWidth: '350px',
         maxHeight: 'auto',
-        boxShadow: '0px 2px 25px rgba(0,0,0,0.2)',
+        boxShadow:  '-20px 20px 60px #d9d9d9',
         borderRadius: '20px',
         color: 'rgba(0,0,0,0.8)',
         textAlign: 'center',

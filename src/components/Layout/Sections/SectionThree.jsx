@@ -6,6 +6,7 @@ const classes = {
   container: {
     background: '#fff',
     display: "flex",
+    height: 'auto !important',
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "column",
@@ -22,6 +23,9 @@ const classes = {
     padding: "40px 10px",
     fontSize: "2.5em",
   },
+  mvmin: {
+    margin: '40vmin 12vmin !important'
+  }
 };
 
 const SectionThree = () => {
@@ -72,6 +76,7 @@ const SectionThree = () => {
             );
           })}
         </div>
+        <button className="btn btn-primary my-4" style={classes.mvmin}>See All Projects</button>
       </section>
     </div>
   );

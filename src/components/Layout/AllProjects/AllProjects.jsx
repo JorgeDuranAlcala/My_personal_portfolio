@@ -71,9 +71,6 @@ const AllProjects = () => {
           })}
         </div>
       </div>
-      <div style={classes.container}>
-        <h1>All My Projects</h1>
-      </div>
     </>
   );
 };

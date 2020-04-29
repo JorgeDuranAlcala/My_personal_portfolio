@@ -17,17 +17,30 @@
         animation: fadeIn .5s ease;
     }
     &_view {
-        width: 60%;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        text-align: center;
+        width: 70%;
+        max-height: auto;
+    }
+    &_article {
+        padding: 15vmin 8vmin;
+        pre {
+            background-color: #00040D;
+            color: #19f5c5;
+        }
     }
 }
 
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+@media screen and (max-width: 850px) {
+    .grid_list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (max-width: 650px) {
+    .grid_list {
+        grid-template-columns: 1fr;
+    }
 }

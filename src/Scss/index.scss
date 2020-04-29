@@ -15,12 +15,14 @@ section {
     height: 100vh;
     width: 100%;
     overflow: hidden;
+    font-family: 'Poppins';
 }
 
 
 
 section:nth-of-type(1) {
-    background: #fff url(../assets/img/sky-space.jpg);
+    background: url(../assets/img/PersonSky.jpg);
+    background-position: 0 -100px;
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -34,6 +36,7 @@ section:nth-of-type(1) {
         h1 {
             color: #fff;
             font-size: 4em;
+            font-weight: bold;
         }
         p {
             color: #fff;
@@ -50,6 +53,27 @@ section:nth-of-type(1) {
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        height: auto !important;
+
+        .btn {
+            $bgBtn: linear-gradient(to right,rgba(33, 248, 69, 0.849), rgba(245, 241, 17, 0.937));
+            width: 250px;
+            padding: 20px 10px;
+            text-align: center;
+            margin: 14vmin !important;
+            font-size: 2em;
+            font-weight: bold;
+            color: #ddd;
+            border: none;
+            border-radius: 10px;
+            background: $bgBtn;
+            transition: all .5s ease;
+            &:hover {
+                color: rgba(0,0,0,0.8);
+                width: 320px;
+                transform: translateY(-12px);
+            } 
+        }
     }
     &_list {
         display: flex;
@@ -102,8 +126,13 @@ section:nth-of-type(3) {
 .sec_5 {
     background-image: url(../assets/img/bgdark.png) !important;
     background-size: cover !important;
-    background-position: 0 -200px !important;
+    background-position:  !important;
     background-repeat: no-repeat !important;
+    height: auto !important;
+    .btn {
+        margin: 20vmin !important;
+        padding: 2.5vmin 8vmin;
+    }
 }
 
 .my_card {

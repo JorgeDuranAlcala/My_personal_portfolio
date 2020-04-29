@@ -1,7 +1,4 @@
 import React, { createContext } from "react";
-import { Link } from "react-router-dom";
-import wolf from "../../assets/img/wolf.png";
-import wolfBlue from "../../assets/img/wolf-blue.png";
 import Toolbar from "../ToolBar/Toolbar";
 
 export const AppContext = createContext();
@@ -23,36 +20,27 @@ class Navbar extends React.Component {
     super(props);
     this.state = {
       sticky: "",
-      wolfChange: false,
       themes: myThemes.home,
     };
   }
 
   componentDidMount() {
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 60) {
-        this.setState({ sticky: "sticky", wolfChange: true });
+      if (window.scrollY > 60 ) {
+        this.setState({ sticky: "sticky" });
       } else {
-        this.setState({ sticky: "", wolfChange: false });
+        this.setState({ sticky: "" });
       }
     });
   }
 
   render() {
-    const { sticky, wolfChange, themes } = this.state;
+    const { sticky, themes } = this.state;
 
     return (
       <>
         <AppContext.Provider value={themes}>
           <nav className={sticky}>
-            <div className="wolf-icon">
-              <img src={wolfChange ? wolfBlue : wolf} alt="wolf-icon" />
-            </div>
-            <h3 className="logo">
-              <Link className={`link`} to="/">
-                Jorge Duran
-              </Link>
-            </h3>
             <Toolbar />
           </nav>
         </AppContext.Provider>
