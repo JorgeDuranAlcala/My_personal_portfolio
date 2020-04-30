@@ -2,7 +2,7 @@ import React from 'react'
 
 const classes = {
     container: {
-        maxWidth: '350px',
+        width: '22.5em',
         maxHeight: 'auto',
         boxShadow:  '-20px 20px 60px #d9d9d9',
         borderRadius: '20px',
@@ -12,14 +12,14 @@ const classes = {
         background: '#fff'
     },
     title: {
-        fontSize: '1.3em',
+        fontSize: '1.2em',
         fontWeight: 'bold',
         textAlign: 'center',
         paddingTop: '4vmin'
     },
     desc: {
         textAlign: 'left',
-        fontSize: '17px',
+        fontSize: '1.0625em',
         padding: '0 4vmin'
     },
     post_img: {

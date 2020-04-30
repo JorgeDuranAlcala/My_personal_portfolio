@@ -47,12 +47,11 @@ const Toolbar = () => {
         </Link>
       </h3>
       <ul>
-        {linksDictionary.map((link, i) => {
+        {linksDictionary.map((link, index) => {
           const { name, to } = link;
           return (
-            <li>
+            <li key={index}>
               <Link
-                key={i}
                 to={to}
                 className="link"
                 style={{ color: pathname === "/" ? themes.color : "#000" }}

@@ -62,7 +62,7 @@ const SectionThree = () => {
     <div>
       <section style={classes.container} className="sec_5">
         <h3 style={classes.title}>Most Recent Projects</h3>
-        <div style={classes.projectsList}>
+        <div style={classes.projectsList} className="project_list">
           {ProjectData.map((item, i) => {
             const { title, desc, url, link } = item;
             return (

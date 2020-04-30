@@ -14,7 +14,7 @@ body, html {
 section {
     height: 100vh;
     width: 100%;
-    overflow: hidden;
+    overflow: hidden !important;
     font-family: 'Poppins';
 }
 
@@ -56,23 +56,8 @@ section:nth-of-type(1) {
         height: auto !important;
 
         .btn {
-            $bgBtn: linear-gradient(to right,rgba(33, 248, 69, 0.849), rgba(245, 241, 17, 0.937));
-            width: 250px;
-            padding: 20px 10px;
-            text-align: center;
+            padding: 20px 4.3125em;
             margin: 14vmin !important;
-            font-size: 2em;
-            font-weight: bold;
-            color: #ddd;
-            border: none;
-            border-radius: 10px;
-            background: $bgBtn;
-            transition: all .5s ease;
-            &:hover {
-                color: rgba(0,0,0,0.8);
-                width: 320px;
-                transform: translateY(-12px);
-            } 
         }
     }
     &_list {
@@ -152,4 +137,32 @@ section:nth-of-type(3) {
     from { width: 0%;}
 }
 
+@media screen and (max-width: 780px) {
+    body, html {
+        overflow-x: hidden !important;
+    }
+
+    .my_card {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .post {
+        &_list {
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    .my_card {
+        font-size: 10px;
+        margin-bottom: 4vmin;
+    }
+    .project_list {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+}
 

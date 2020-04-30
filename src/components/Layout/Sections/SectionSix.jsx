@@ -1,5 +1,6 @@
-import React, { useEffect, useState, useRef } from 'react'
-import { getDataFromYtbAPI, getVideoFromYtb } from '../../../utils/apiYoutube'
+import React, { useEffect, useState } from 'react'
+import { getDataFromYtbAPI } from '../../../utils/apiYoutube'
+import ReactPlayer from "react-player";
 
 const styles = {
     container: {
@@ -9,45 +10,54 @@ const styles = {
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'column'
+    },
+    videosContainer: {
+        width: '100%',
+        height: '80%',
+        display: 'flex',
+        justifyContent: 'space-around',
+        alignItems: 'center'
     }
 }
 
 const SectionSix = () => {
 
     const [embedVideos, setEmbedVideos] = useState([])
-    const videoCont = useRef()
-
-    useEffect(() => {
-
-        const fetchVideosData =  async () => {
-
-            const data = await getDataFromYtbAPI('3', 'date');
-          //  let newState = []
-            console.log(data)
-            data.map( async value => {
-                const { videoId } = value.id;
-                const video = await getVideoFromYtb(videoId);
-                const { embedHtml }  = video;
-                videoCont.current.innerHTML = embedHtml;
-            })
-        }
-        
-        /* const embedCode = () => {
-            embedVideos.map( video => {
-                const { embedHtml } = video;
-                videoCont.current
-            } )
-        }
-
-        embedCode() */
-        fetchVideosData()
-    })
     
+    
+    useEffect(() => {
+        const fetchVideosData =  async () => {
+            
+            try {     
+                const data = await getDataFromYtbAPI('3', 'viewCount');
+                setEmbedVideos(data)
+       
+                } catch (error) {
+                    console.log(error)
+                }
+                
+            } 
+            
+           fetchVideosData()
+        }, [])
+        
 
-    return (
-        <div style={styles.container}>
-            <h1>Hello I'm section SIX</h1>
-            <div ref={videoCont}></div>
+        return (
+        <div className="sec_6">
+            <h3 className="sec_6_subtitle">
+                My Most Popular Videos
+            </h3>
+            <div className="sec_6_grid">
+                { embedVideos && embedVideos.map( (data, index) => {
+                    const { videoId } = data.id
+                    return <ReactPlayer 
+                    key={index}
+                    width="380px"
+                    height="250px"
+                    url={`https://www.youtube.com/watch?v=${videoId}`}
+                    />
+                }) }
+            </div>
         </div>
     )
 }
