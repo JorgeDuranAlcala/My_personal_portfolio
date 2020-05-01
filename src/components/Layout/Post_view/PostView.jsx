@@ -15,7 +15,7 @@ const PostView = () => {
   };
     
     fetchData();
-  });
+  }, [id]);
   
   
   const { content } = article;

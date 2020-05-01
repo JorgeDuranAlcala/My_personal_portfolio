@@ -11,6 +11,7 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "column",
+    overflow: 'hidden'
   },
 };
 
@@ -30,7 +31,7 @@ const Blog = () => {
   return (
     <div style={styles.container}>
       <div className="blog_title">
-        <h1>I'm The blog</h1>
+        <h3>Welcome To My Blog</h3>
       </div>
       <div className="grid_list">
         {Data.map((item, i) => {
@@ -42,7 +43,7 @@ const Blog = () => {
           title={title} 
           desc={description} 
           key={i}
-          cls="blog_post"
+          cls="blog_post my_card"
           id={id}
           link="/postView"
           ></Post>;

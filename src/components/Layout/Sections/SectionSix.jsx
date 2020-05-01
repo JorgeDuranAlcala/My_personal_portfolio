@@ -1,24 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { getDataFromYtbAPI } from '../../../utils/apiYoutube'
 import ReactPlayer from "react-player";
-
-const styles = {
-    container: {
-        width: '100%',
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column'
-    },
-    videosContainer: {
-        width: '100%',
-        height: '80%',
-        display: 'flex',
-        justifyContent: 'space-around',
-        alignItems: 'center'
-    }
-}
+import Icon from '../../Icon/Icon';
+import { faYoutube } from "@fortawesome/fontawesome-free-brands";
 
 const SectionSix = () => {
 
@@ -45,7 +29,7 @@ const SectionSix = () => {
         return (
         <div className="sec_6">
             <h3 className="sec_6_subtitle">
-                My Most Popular Videos
+                <Icon icon={faYoutube} cls="ytb_icon"/> My Most Popular Videos
             </h3>
             <div className="sec_6_grid">
                 { embedVideos && embedVideos.map( (data, index) => {
@@ -55,7 +39,7 @@ const SectionSix = () => {
                     width="380px"
                     height="250px"
                     url={`https://www.youtube.com/watch?v=${videoId}`}
-                    />
+                />
                 }) }
             </div>
         </div>

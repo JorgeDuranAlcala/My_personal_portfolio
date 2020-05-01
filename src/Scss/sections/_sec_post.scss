@@ -1,0 +1,38 @@
+.post {
+    &_section {
+        position: relative;
+        display: flex;
+        background-color: #fff;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: auto !important;
+
+        .btn {
+            padding: 20px 4.3125em;
+            background: linear-gradient(to bottom, coral, magenta);
+            margin: 14vmin !important;
+            border: none;
+            animation: changeBg 20s 1s linear infinite;
+        }
+    }
+    &_list {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        height: 80%;
+        align-items: center;
+    }
+    &_subtitle {
+        font-size: 2.5em;
+        padding: 0px 10px;
+        text-align: center;
+        margin: 10vmin 0 ;
+    }
+}
+
+/* @keyframes changeBg {
+    0% { background: linear-gradient(to bottom, coral, magenta);}
+    50% { background: linear-gradient(to bottom, lightblue, magenta);}
+    100% { background: linear-gradient(to bottom, magenta, coral); }
+} */

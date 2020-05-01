@@ -8,7 +8,7 @@ const classes = {
         borderRadius: '20px',
         color: 'rgba(0,0,0,0.8)',
         textAlign: 'center',
-        padding: '0 0 10px 0',
+        padding: '0 0 4vmin 0',
         background: '#fff'
     },
     title: {
@@ -25,12 +25,9 @@ const classes = {
     post_img: {
         width: '100%'
     },
-    link: {
-      
-    }
 }
 
-const Card = ({ title, desc, url, link, linkName, cls, id}) => {
+const Card = ({ title, desc, url, link, linkName, cls, id, blank}) => {
 
     //console.log(id)
 
@@ -48,9 +45,10 @@ const Card = ({ title, desc, url, link, linkName, cls, id}) => {
 
                 link && 
                 <a 
-                href={`${link}/${id}`} 
-                target="_blank" rel="noopener noreferrer"
-                style={classes.link}
+                href={`${link}/${id}`}
+                target={blank}
+                rel="noopener noreferrer"
+                className="linkPath"
                 >
                     {linkName}
                 </a>

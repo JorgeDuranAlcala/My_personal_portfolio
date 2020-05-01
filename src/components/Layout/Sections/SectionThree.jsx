@@ -72,11 +72,18 @@ const SectionThree = () => {
                 link={link}
                 url={url}
                 key={i}
+                
               />
             );
           })}
         </div>
-        <button className="btn btn-primary my-4" style={classes.mvmin}>See All Projects</button>
+        <a 
+        className="btn btn-primary my-4" 
+        style={classes.mvmin}
+        href="/allProjects"
+        >
+          See All Projects
+        </a>
       </section>
     </div>
   );
