@@ -53,8 +53,8 @@ async componentDidMount() {
       <>
         <section className="sec_1">
           <div className="hero">
-            <h1>I'm a Web Developer</h1>
-            <p>My Name Is Jorge</p>
+            <h1>I'm jorge Duran</h1>
+            <p>and I'm a Web Developer</p>
           </div>
           {/*   waves svg  */}
           <div className="wave wave_1"></div>

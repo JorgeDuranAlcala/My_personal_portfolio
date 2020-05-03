@@ -9,11 +9,14 @@
         height: auto !important;
 
         .btn {
-            padding: 20px 4.3125em;
+            padding: 25px 3em;
             background: linear-gradient(to bottom, coral, magenta);
             margin: 14vmin !important;
             border: none;
-            animation: changeBg 20s 1s linear infinite;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-transform: uppercase;
+            animation: changeBg 10s 1s linear infinite;
         }
     }
     &_list {
@@ -31,8 +34,8 @@
     }
 }
 
-/* @keyframes changeBg {
+@keyframes changeBg {
     0% { background: linear-gradient(to bottom, coral, magenta);}
-    50% { background: linear-gradient(to bottom, lightblue, magenta);}
-    100% { background: linear-gradient(to bottom, magenta, coral); }
-} */
+    50% { background: linear-gradient(to bottom, #28c7fa, #775ada);}
+    100% { background: linear-gradient(to top, #ffd615, #ff1f5a); }
+} 

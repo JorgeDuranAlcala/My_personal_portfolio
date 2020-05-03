@@ -38,10 +38,20 @@
         animation: fadeIn .5s ease;
     }
     &_view {
-        width: 70%;
+        width: 100%;
         max-height: auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    &_comments {
+        width: 60%;
+        margin: 8px 20%;
     }
     &_article {
+        width: 80%;
+        margin: 8vmin 10%;
+        flex-direction: column;
         padding: 15vmin 8vmin;
         pre {
             background-color: #00040D;

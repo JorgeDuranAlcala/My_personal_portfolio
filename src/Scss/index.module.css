@@ -286,11 +286,32 @@ nav ul li .link:hover {
 }
 
 .blog_view {
-  width: 70%;
+  width: 100%;
   max-height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.blog_comments {
+  width: 60%;
+  margin: 8px 20%;
 }
 
 .blog_article {
+  width: 80%;
+  margin: 8vmin 10%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   padding: 15vmin 8vmin;
 }
 
@@ -332,8 +353,11 @@ nav ul li .link:hover {
 }
 
 .sec_6 {
+  background-image: url(../assets/img/svgs/IlustGradient.svg);
+  background-size: cover;
+  background-position: -40px 0px;
   width: 100%;
-  height: 100vh;
+  height: 150vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -347,22 +371,25 @@ nav ul li .link:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: relative;
 }
 
 .sec_6_subtitle {
-  font-size: 2.5em;
+  font-size: 3em;
   padding: 0px 20px;
   text-align: center;
-  margin: 20vmin 0;
+  margin: 20vmin 4vmin;
   font-weight: bold;
-  position: relative;
+  position: absolute;
+  left: 30%;
+  top: 0;
 }
 
 .sec_6_subtitle .ytb_icon {
   position: absolute;
-  right: -100px;
-  font-size: 2em;
-  top: -10px;
+  left: -25%;
+  font-size: 2.5em;
+  top: -30px;
   color: red;
 }
 
@@ -401,7 +428,45 @@ nav ul li .link:hover {
 
 .sec_5 .btn {
   margin: 20vmin !important;
-  padding: 2.5vmin 8vmin;
+  padding: 25px 3em;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  font-size: 1.5em;
+  -webkit-animation: changeBg 8s linear infinite;
+          animation: changeBg 8s linear infinite;
+  background: -webkit-gradient(linear, left bottom, left top, from(magenta), to(coral));
+  background: linear-gradient(to top, magenta, coral);
+}
+
+@-webkit-keyframes changeBg {
+  0% {
+    background: -webkit-gradient(linear, left top, left bottom, from(coral), to(magenta));
+    background: linear-gradient(to bottom, coral, magenta);
+  }
+  50% {
+    background: -webkit-gradient(linear, left top, left bottom, from(#28c7fa), to(#775ada));
+    background: linear-gradient(to bottom, #28c7fa, #775ada);
+  }
+  100% {
+    background: -webkit-gradient(linear, left bottom, left top, from(#ffd615), to(#ff1f5a));
+    background: linear-gradient(to top, #ffd615, #ff1f5a);
+  }
+}
+
+@keyframes changeBg {
+  0% {
+    background: -webkit-gradient(linear, left top, left bottom, from(coral), to(magenta));
+    background: linear-gradient(to bottom, coral, magenta);
+  }
+  50% {
+    background: -webkit-gradient(linear, left top, left bottom, from(#28c7fa), to(#775ada));
+    background: linear-gradient(to bottom, #28c7fa, #775ada);
+  }
+  100% {
+    background: -webkit-gradient(linear, left bottom, left top, from(#ffd615), to(#ff1f5a));
+    background: linear-gradient(to top, #ffd615, #ff1f5a);
+  }
 }
 
 .post_section {
@@ -424,13 +489,16 @@ nav ul li .link:hover {
 }
 
 .post_section .btn {
-  padding: 20px 4.3125em;
+  padding: 25px 3em;
   background: -webkit-gradient(linear, left top, left bottom, from(coral), to(magenta));
   background: linear-gradient(to bottom, coral, magenta);
   margin: 14vmin !important;
   border: none;
-  -webkit-animation: changeBg 20s 1s linear infinite;
-          animation: changeBg 20s 1s linear infinite;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+  -webkit-animation: changeBg 10s 1s linear infinite;
+          animation: changeBg 10s 1s linear infinite;
 }
 
 .post_list {
@@ -453,11 +521,21 @@ nav ul li .link:hover {
   margin: 10vmin 0;
 }
 
-/* @keyframes changeBg {
-    0% { background: linear-gradient(to bottom, coral, magenta);}
-    50% { background: linear-gradient(to bottom, lightblue, magenta);}
-    100% { background: linear-gradient(to bottom, magenta, coral); }
-} */
+@keyframes changeBg {
+  0% {
+    background: -webkit-gradient(linear, left top, left bottom, from(coral), to(magenta));
+    background: linear-gradient(to bottom, coral, magenta);
+  }
+  50% {
+    background: -webkit-gradient(linear, left top, left bottom, from(#28c7fa), to(#775ada));
+    background: linear-gradient(to bottom, #28c7fa, #775ada);
+  }
+  100% {
+    background: -webkit-gradient(linear, left bottom, left top, from(#ffd615), to(#ff1f5a));
+    background: linear-gradient(to top, #ffd615, #ff1f5a);
+  }
+}
+
 .my_card {
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
@@ -514,8 +592,10 @@ nav ul li .link:hover {
 }
 
 .contact_sec {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(27.35%, magenta), color-stop(62.96%, coral));
+  background: linear-gradient(to bottom, magenta 27.35%, coral 62.96%);
   width: 100%;
-  height: 100vh;
+  height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -525,5 +605,100 @@ nav ul li .link:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contact_sec h2 {
+  font-size: 3.5em;
+  margin-bottom: 8vmin;
+  color: #fff;
+}
+
+.contact_sec form {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 8vmin;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #fff;
+}
+
+.contact_sec form input[type="text"] {
+  background: #2e2e2e;
+  margin-bottom: 2.5vmin;
+  padding: 2vmin;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.contact_sec form input[type="text"]::-webkit-input-placeholder {
+  font-size: 1.2em;
+  padding: 2vmin 0;
+}
+
+.contact_sec form input[type="text"]:-ms-input-placeholder {
+  font-size: 1.2em;
+  padding: 2vmin 0;
+}
+
+.contact_sec form input[type="text"]::-ms-input-placeholder {
+  font-size: 1.2em;
+  padding: 2vmin 0;
+}
+
+.contact_sec form input[type="text"]::placeholder {
+  font-size: 1.2em;
+  padding: 2vmin 0;
+}
+
+.contact_sec form textarea {
+  background: #2e2e2e;
+  padding: 2vmin;
+  color: #fff;
+  outline: none;
+  margin-bottom: 2.5vmin;
+  border-radius: 10px;
+  border: none;
+}
+
+.contact_sec form textarea::-webkit-input-placeholder {
+  font-size: 1.2em;
+  padding: 0vmin;
+}
+
+.contact_sec form textarea:-ms-input-placeholder {
+  font-size: 1.2em;
+  padding: 0vmin;
+}
+
+.contact_sec form textarea::-ms-input-placeholder {
+  font-size: 1.2em;
+  padding: 0vmin;
+}
+
+.contact_sec form textarea::placeholder {
+  font-size: 1.2em;
+  padding: 0vmin;
+}
+
+.contact_sec form button {
+  border-radius: 10px;
+  padding: 2vmin 0;
+  background: #000000;
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
 }
 /*# sourceMappingURL=index.module.css.map */

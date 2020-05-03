@@ -6,6 +6,18 @@
     height: auto !important;
     .btn {
         margin: 20vmin !important;
-        padding: 2.5vmin 8vmin;
+        padding: 25px 3em;
+        font-weight: bold;
+        text-transform: uppercase;
+        border: none;
+        font-size: 1.5em;
+        animation: changeBg 8s linear infinite;
+        background: linear-gradient(to top, magenta, coral);
     }
 }
+
+@keyframes changeBg {
+    0% { background: linear-gradient(to bottom, coral, magenta);}
+    50% { background: linear-gradient(to bottom, #28c7fa, #775ada);}
+    100% { background: linear-gradient(to top, #ffd615, #ff1f5a); }
+} 
