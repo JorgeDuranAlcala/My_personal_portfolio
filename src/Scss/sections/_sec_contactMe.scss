@@ -18,7 +18,9 @@
             display: flex;
             margin-bottom: 8vmin;
             flex-direction: column;
-            color: #fff;
+            background: #1e1e1e;
+            padding: 4vmin;
+            border-radius: 10px;
             input[type="text"] {
                 background: #2e2e2e;
                 margin-bottom: 2.5vmin;
@@ -55,6 +57,11 @@
                 text-transform: uppercase;
                 border: none;
                 outline: none;
+                transition: .5s all ease;
+                &:hover {
+                    background: #5e5e5e;
+                    color: #000;
+                }
             }
         }
     }

@@ -3,7 +3,6 @@ const app = express();
 const cors = require("cors")
 const bodyParser = require("body-parser")
 const sendEmail = require("./nodemailer")
-require("dotenv").config()
 
 app.set('port', process.env.PORT || 4040)
 
@@ -12,10 +11,15 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(express.json())
 
+
 app.post('/', async (req, res) => {
-    console.log(req.body)
-    await sendEmail(req.body).catch(console.error)
-    res.send({message: 'send it'})
+    try {
+        await sendEmail(req.body)
+        res.send({message: 'send it'})
+    } catch (error) {
+        res.status(400).send("error")
+        console.log(error)
+    }
 })
 
 app.listen(app.get('port'), () => {

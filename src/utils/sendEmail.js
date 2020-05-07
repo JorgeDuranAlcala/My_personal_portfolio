@@ -1,6 +1,5 @@
 
 export const sendEmail = async ({name, email, message}) => {
-    console.log(`name: ${name} \nemail: ${email} \nmessage: ${message}`)
     await fetch('http://localhost:4040/', {
         method: "POST",
         body: JSON.stringify({

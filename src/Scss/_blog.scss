@@ -53,6 +53,13 @@
         margin: 8vmin 10%;
         flex-direction: column;
         padding: 15vmin 8vmin;
+        @for $i from 0 through 6 {
+            h#{$i} {
+                margin-bottom: 8vmin;
+                text-align: center;
+            }
+
+        }
         pre {
             background-color: #00040D;
             color: #19f5c5;
