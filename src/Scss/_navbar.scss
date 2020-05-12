@@ -33,14 +33,18 @@ nav {
     font-size: 2em;
     .link {
         text-decoration: none;
-        color: #fff;
     }
+}
+
+.logoCont:hover .wolf-icon{
+    transform: rotate(360deg);
 }
 
 .wolf-icon {
     width: 50px;
     float: left;
     margin: 10px 10px;
+    transition: 1s ease all;
 }
 
 .wolf-icon img {

@@ -34,18 +34,20 @@ const Toolbar = () => {
 
   return (
     <>
-      <div className="wolf-icon">
-        <img src={pathname === '/' ? wolfIcon : wolfBlue} alt="wolf-icon" />
+      <div className="logoCont">
+        <div className="wolf-icon">
+          <img src={pathname === '/' ? wolfIcon : wolfBlue} alt="wolf-icon" />
+        </div>
+        <h3 className="logo">
+          <Link 
+          className={`link`} 
+          to="/"
+          style={{ color: pathname === "/" ? themes.color : "#000" }}
+          >
+            Jorge Duran
+          </Link>
+        </h3>
       </div>
-      <h3 className="logo">
-        <Link 
-        className={`link`} 
-        to="/"
-        style={{ color: pathname === "/" ? themes.color : "#000" }}
-        >
-          Jorge Duran
-        </Link>
-      </h3>
       <ul>
         {linksDictionary.map((link, index) => {
           const { name, to } = link;

@@ -40,13 +40,19 @@ nav ul li .link:hover {
 
 .logo .link {
   text-decoration: none;
-  color: #fff;
+}
+
+.logoCont:hover .wolf-icon {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
 }
 
 .wolf-icon {
   width: 50px;
   float: left;
   margin: 10px 10px;
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
 }
 
 .wolf-icon img {

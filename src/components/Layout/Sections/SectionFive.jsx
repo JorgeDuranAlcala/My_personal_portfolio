@@ -39,7 +39,7 @@ const SectionFive = () => {
               );
             })}
         </div>
-        <buttton className="btn btn-primary my-4">View All Posts</buttton>
+        <a href="/blog" className="btn my-4">See All Posts</a>
       </section>
     </div>
   );

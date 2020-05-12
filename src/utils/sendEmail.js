@@ -1,14 +1,21 @@
 
-export const sendEmail = async ({name, email, message}) => {
-    await fetch('http://localhost:4040/', {
+export const sendEmail = async (formData) => {
+
+    const encode = data => {
+        const keys = Object.keys(data)
+        return keys
+        .map( key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+        .join("&");
+    }
+
+
+    const res = await fetch("/", {
         method: "POST",
-        body: JSON.stringify({
-            name,
-            email,
-            message
-        }),
-        headers: { "Content-type": "application/json; charset=UTF-8" }
-    }).then(res => res.json())
-    .then(console.log)
-    .catch(console.error)
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact", ...formData})
+      })
+        .then(res => res)
+        .catch(error => alert(error));
+
+      return res
 }

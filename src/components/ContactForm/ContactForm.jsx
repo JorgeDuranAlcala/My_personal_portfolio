@@ -20,9 +20,10 @@ export default class ContactForm extends Component {
         })
     }
 
-    onSubmit = e => {
+    onSubmit = async e => {
         e.preventDefault()
-        sendEmail(this.state)
+        const res = await sendEmail(this.state)
+        console.log(res)
     }
     
 

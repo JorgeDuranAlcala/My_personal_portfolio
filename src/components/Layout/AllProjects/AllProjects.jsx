@@ -18,7 +18,7 @@ myProjects_list: {
     display: "flex",
     justifyContent: "space-around",
     alignItems: "center",
-    marginTop: '12vmin'
+    marginTop: '14vmin !important'
   }
 };
 
@@ -55,7 +55,6 @@ const AllProjects = () => {
   return (
     <>
       <div style={classes.container} className="my_projects">
-        <h1>All My Projects</h1>
         <div style={classes.myProjects_list}>
           {ProjectData.map((item, i) => {
             const { title, desc, url, link } = item;

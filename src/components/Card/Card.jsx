@@ -31,6 +31,8 @@ const Card = ({ title, desc, url, link, linkName, cls, id, blank}) => {
 
     //console.log(id)
 
+    const changeUrl = id ? `${link}/${id}` : link;
+
     return (
         <div>
             <div style={classes.container} className={cls} >
@@ -45,7 +47,7 @@ const Card = ({ title, desc, url, link, linkName, cls, id, blank}) => {
 
                 link && 
                 <a 
-                href={`${link}/${id}`}
+                href={changeUrl}
                 target={blank}
                 rel="noopener noreferrer"
                 className="linkPath"
