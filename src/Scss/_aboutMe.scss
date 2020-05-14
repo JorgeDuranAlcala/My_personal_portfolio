@@ -1,27 +1,28 @@
 .aboutMe {
-    position: relative;
     font-family: 'Lobster';
     overflow: hidden;
+    position: relative;
     background-color: rgb(241, 243, 244);
     color: #232323;
+    height: auto !important;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     .about {
-        position: absolute;
-       left: 145%;
-       width: 700px;
+       width: 43.75em;
        text-align: center;
        h3 {
            padding: 8vmin 4vmin;
            font-size: 2.2em;
+           font-weight: bold;
        }
        p {
            text-align: left;
-           line-height: 35px;
+           line-height: 2.1875em;
            font-size: 1.2em;
-       }
+        }
     }
-
+    
     .personal_data {
-        position: absolute;
         width: 280px;
         margin-top: 4vmin;
         height: auto;
@@ -46,15 +47,51 @@
         }
     }
 
-    .profile {
-        width: 300px;
-        position: absolute;
-        top: 40px;
-        left: 12%;
-        img {
-            width: 100%;
-            border-radius: 50%;
+    .my_profile {
+        justify-self: center;
+        .box-img {
+            width: 300px;
+            img {
+                width: 100%;
+                border-radius: 50%;
+            }
         }
     }
 }
+
+@media screen and (max-width: 780px) {
+    .aboutMe {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto, 1fr);
+        .about {
+            font-size: 12px;
+            justify-self: center;
+            margin: 12vmin 0vmin;
+            h3 {
+                font-size: 3em !important;
+                padding: 4vmin 0 !important;
+            }
+        }
+        .my_profile {
+            margin-top: 4vmin;
+        }
+    }
+}
+@media screen and (max-width: 550px) {
+    .about {
+        font-size: 9px;
+        justify-self: center;
+        width: 80% !important;
+        h3 {
+            font-size: 3em !important;
+            padding: 4vmin 0 !important;
+        }
+        p {
+            font-size: 1.3em !important;
+            padding: 0 10px;
+        }
+    }
+}
+
 

@@ -12,7 +12,7 @@ import {
 } from "@fortawesome/fontawesome-free-brands";
 import { SkillBar, Icon } from "../index";
 import profile from "../../assets/img/profile1.jpg";
-import { SectionThree, SectionSix, SectionFive, SectionSeven } from "./Sections/index";
+import { SectionThree, SectionSix, SectionFive, SectionSeven, SectionFour, SectionTwo } from "./Sections/index";
 
 class Home extends React.Component {
   constructor(props) {
@@ -62,55 +62,9 @@ async componentDidMount() {
           <div className="wave wave_3"></div>
           <div className="wave wave_4"></div>
         </section>
-
-        <section className="aboutMe">
-          <div className="profile">
-            <div className="about">
-              <h3>About Me</h3>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Blanditiis adipisci provident perferendis consequatur ad
-                pariatur illo labore, delectus ut? Cumque reprehenderit iste
-                dicta, quibusdam veniam voluptatibus minus totam rem
-                blanditiis?Perspiciatis officia veritatis fugit facere nulla ab
-                nisi, vel voluptatem ducimus quibusdam illo sapiente sequi minus
-                voluptates! Odio magnam repudiandae nemo quod debitis. Animi
-                ullam tenetur, assumenda fugiat voluptatibus non.
-              </p>
-            </div>
-            {/* profile photo */}
-            <img src={profile} alt="profile" />
-            {/* Personal Data */}
-            <div className="personal_data">
-              <h5>Social Media</h5>
-              <a href="/" style={{ color: "#fd1d1d" }}>
-                <Icon icon={faInstagram} cls="icon" color="#fd1d1d" />
-                My Instagram
-              </a>
-              <a href="/" style={{ color: "#56CCF2" }}>
-                <Icon icon={faTwitter} cls="icon" color="#56CCF2" />
-                My Twitter
-              </a>
-              <a href="/">
-                <Icon icon={faGithub} cls="icon" />
-                My gitHub
-              </a>
-            </div>
-          </div>
-        </section>
+        <SectionTwo/>
         <SectionThree />
-        <section classs="sec_4">
-          <h3 className="subtitle-3">My Skills</h3>
-          <div className="skillBars">
-            {showUp &&
-              this.barsData.map((bar, i) => {
-                const { icon, name, percent } = bar;
-                return (
-                  <SkillBar key={i} icon={icon} name={name} percent={percent} />
-                );
-              })}
-          </div>
-        </section>
+        <SectionFour showUp={showUp} />
         <SectionFive/>
         <SectionSix/>
         <SectionSeven/>

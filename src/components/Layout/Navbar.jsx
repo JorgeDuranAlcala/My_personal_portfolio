@@ -1,7 +1,25 @@
 import React, { createContext } from "react";
 import Toolbar from "../ToolBar/Toolbar";
+import { useLocation } from "react-router-dom";
 
 export const AppContext = createContext();
+
+const GetLocation = ({Icon, callback}) => {
+  const { pathname } = useLocation();
+  
+  const color = (pathname === '/')
+                ? "white"
+                : "black"
+
+  return (
+    <i className={`${Icon} ${color}`} 
+              onClick={callback}
+            ></i>
+  )
+}
+
+
+
 
 const myThemes = {
   projects: {
@@ -21,7 +39,10 @@ class Navbar extends React.Component {
     this.state = {
       sticky: "",
       themes: myThemes.home,
+      showUp: "d-none",
+      Icon: "fas fa-bars"
     };
+
   }
 
   componentDidMount() {
@@ -34,8 +55,19 @@ class Navbar extends React.Component {
     });
   }
 
+
+  displayNavToMobileDevices = () => {
+
+        (this.state.showUp === "d-none")
+        ? this.setState({ 
+            showUp: "showUp", 
+            Icon: "fas fa-window-close"
+          })
+        : this.setState({ showUp: "d-none", Icon: "fas fa-bars" })
+  }
+
   render() {
-    const { sticky, themes } = this.state;
+    const { sticky, themes, showUp, Icon } = this.state;
 
     return (
       <>
@@ -43,6 +75,13 @@ class Navbar extends React.Component {
           <nav className={sticky}>
             <Toolbar />
           </nav>
+          <div className="burger">
+            <GetLocation Icon={Icon} callback={this.displayNavToMobileDevices} />
+            <div className={`nav_content ${showUp}`}>
+              <Toolbar/>
+            </div>
+            {/* <Toolbar /> */}
+          </div>
         </AppContext.Provider>
       </>
     );

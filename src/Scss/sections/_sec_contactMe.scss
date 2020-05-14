@@ -66,3 +66,18 @@
         }
     }
 }
+
+
+@media screen and (max-width: 780px) {
+    .contact {
+        &_sec {
+
+            h2 {
+                padding: 12vmin 0 2vmin 0;
+            }
+            .form {
+                width: 85% !important;   
+            }
+        }
+    }
+}

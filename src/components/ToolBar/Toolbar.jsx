@@ -11,7 +11,7 @@ const Toolbar = () => {
   const { pathname } = location;
   const linksDictionary = [
     { name: "Blog", to: "/blog" },
-    { name: "allProjects", to: "/allProjects" },
+    { name: "All Projects", to: "/allProjects" },
     { name: "Home", to: "/" },
   ];
 

@@ -12,16 +12,15 @@ const classes = {
     flexDirection: "column",
   },
   projectsList: {
-    display: "flex",
-    justifyContent: "space-around",
-    width: "100%",
-    height: "80%",
-    alignItems: "center",
+    display: 'grid',
+    gridTemplateColumns: 'repeat(3, 1fr)',
+    gridGap: '6vmin'
   },
   title: {
     marginBottom: "5vmin",
     padding: "40px 10px",
     fontSize: "2.5em",
+    fontWeight: 'bold'
   },
   mvmin: {
     margin: '40vmin 12vmin !important'

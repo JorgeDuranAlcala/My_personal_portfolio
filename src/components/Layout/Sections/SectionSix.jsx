@@ -28,9 +28,11 @@ const SectionSix = () => {
 
         return (
         <div className="sec_6">
-            <h3 className="sec_6_subtitle">
-                <Icon icon={faYoutube} cls="ytb_icon"/> My Most Popular Videos
-            </h3>
+            <div className="ytb_tl">     
+                <h3 className="ytb_tl_subtitle">
+                    <Icon icon={faYoutube} cls="ytb_icon"/> My Most Popular Videos
+                </h3>
+            </div>
             <div className="sec_6_grid">
                 { embedVideos && embedVideos.map( (data, index) => {
                     const { videoId } = data.id

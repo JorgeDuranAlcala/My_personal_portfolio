@@ -2,8 +2,10 @@
 nav {
   width: 100%;
   position: fixed;
+  left: 0;
+  top: 0;
   background: inherit;
-  overflow-x: hidden;
+  overflow: hidden;
   padding: 5px 10px;
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
@@ -77,6 +79,86 @@ nav ul li .link:hover {
   color: rgba(0, 0, 0, 0.8) !important;
 }
 
+.burger {
+  display: none;
+  font-size: 2.5em;
+  position: absolute;
+  left: 0;
+  z-index: 999;
+}
+
+.fa-window-close, .fa-bars {
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 1.2em;
+  position: absolute;
+  left: 4vmin;
+  top: 4vmin;
+  -webkit-transition: 2s ease all;
+  transition: 2s ease all;
+  cursor: pointer;
+}
+
+.nav_content {
+  width: 0vw;
+  height: 100vh;
+  font-size: 0.8em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #fff;
+  -webkit-transition: .5s ease width;
+  transition: .5s ease width;
+}
+
+.showUp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100vw;
+}
+
+.white {
+  color: #fff;
+}
+
+.black {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+@media screen and (max-width: 780px) {
+  nav {
+    display: none;
+  }
+  .fa-window-close {
+    color: rgba(0, 0, 0, 0.8);
+  }
+  .burger {
+    display: block;
+  }
+  .burger li {
+    list-style: none;
+  }
+  .burger .link {
+    color: rgba(0, 0, 0, 0.8) !important;
+    -webkit-animation: fadeIn 3s ease;
+            animation: fadeIn 3s ease;
+    text-decoration: none;
+  }
+  .burger .link:hover {
+    color: rgba(0, 0, 0, 0.4) !important;
+  }
+  .burger .wolf-icon {
+    display: none;
+  }
+}
+
 /* Color Theme Swatches in Hex */
 /* gradients colors */
 /* List of Vars */
@@ -92,6 +174,7 @@ nav ul li .link:hover {
   background-position: 0 bottom;
   -webkit-transform-origin: center bottom;
           transform-origin: center bottom;
+  overflow-x: hidden;
   background-repeat: repeat-x;
 }
 
@@ -125,6 +208,12 @@ nav ul li .link:hover {
 
 /* background-color: #0A0B26; */
 /* #221F73 */
+@media screen and (max-width: 780px) {
+  .wave {
+    display: none;
+  }
+}
+
 @-webkit-keyframes aniwave1 {
   0% {
     -webkit-transform: translateX(0%) translateZ(0) scaleY(0.2);
@@ -139,6 +228,7 @@ nav ul li .link:hover {
             transform: translateX(-50%) translateZ(0) scaleY(0.5);
   }
 }
+
 @keyframes aniwave1 {
   0% {
     -webkit-transform: translateX(0%) translateZ(0) scaleY(0.2);
@@ -158,33 +248,36 @@ nav ul li .link:hover {
 /* gradients colors */
 /* List of Vars */
 .aboutMe {
-  position: relative;
   font-family: 'Lobster';
   overflow: hidden;
+  position: relative;
   background-color: #f1f3f4;
   color: #232323;
+  height: auto !important;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
 }
 
 .aboutMe .about {
-  position: absolute;
-  left: 145%;
-  width: 700px;
+  width: 43.75em;
   text-align: center;
 }
 
 .aboutMe .about h3 {
   padding: 8vmin 4vmin;
   font-size: 2.2em;
+  font-weight: bold;
 }
 
 .aboutMe .about p {
   text-align: left;
-  line-height: 35px;
+  line-height: 2.1875em;
   font-size: 1.2em;
 }
 
 .aboutMe .personal_data {
-  position: absolute;
   width: 280px;
   margin-top: 4vmin;
   height: auto;
@@ -229,16 +322,59 @@ nav ul li .link:hover {
   text-align: left;
 }
 
-.aboutMe .profile {
-  width: 300px;
-  position: absolute;
-  top: 40px;
-  left: 12%;
+.aboutMe .my_profile {
+  -ms-grid-column-align: center;
+      justify-self: center;
 }
 
-.aboutMe .profile img {
+.aboutMe .my_profile .box-img {
+  width: 300px;
+}
+
+.aboutMe .my_profile .box-img img {
   width: 100%;
   border-radius: 50%;
+}
+
+@media screen and (max-width: 780px) {
+  .aboutMe {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-columns: (1fr)[auto];
+        grid-template-columns: repeat(auto, 1fr);
+  }
+  .aboutMe .about {
+    font-size: 12px;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    margin: 12vmin 0vmin;
+  }
+  .aboutMe .about h3 {
+    font-size: 3em !important;
+    padding: 4vmin 0 !important;
+  }
+  .aboutMe .my_profile {
+    margin-top: 4vmin;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .about {
+    font-size: 9px;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    width: 80% !important;
+  }
+  .about h3 {
+    font-size: 3em !important;
+    padding: 4vmin 0 !important;
+  }
+  .about p {
+    font-size: 1.3em !important;
+    padding: 0 10px;
+  }
 }
 
 .grid_list {
@@ -415,18 +551,21 @@ nav ul li .link:hover {
   position: relative;
 }
 
-.sec_6_subtitle {
+.sec_6 .ytb_tl {
+  margin: 6vmin 24vmin 20vmin 0;
+}
+
+.sec_6 .ytb_tl_subtitle {
   font-size: 3em;
   padding: 0px 20px;
   text-align: center;
-  margin: 20vmin 4vmin;
   font-weight: bold;
-  position: absolute;
   left: 30%;
+  position: relative;
   top: 0;
 }
 
-.sec_6_subtitle .ytb_icon {
+.sec_6 .ytb_tl_subtitle .ytb_icon {
   position: absolute;
   left: -25%;
   font-size: 2.5em;
@@ -450,6 +589,15 @@ nav ul li .link:hover {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
   }
+  .sec_6 .ytb_tl_subtitle {
+    font-size: 2.1em;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+  }
+  .sec_6 .ytb_tl_subtitle .ytb_icon {
+    left: -20%;
+  }
 }
 
 @media screen and (max-width: 550px) {
@@ -469,7 +617,7 @@ nav ul li .link:hover {
 
 .sec_5 .btn {
   margin: 20vmin !important;
-  padding: 25px 3em;
+  padding: 5vmin 15vmin;
   font-weight: bold;
   text-transform: uppercase;
   border: none;
@@ -478,6 +626,33 @@ nav ul li .link:hover {
           animation: changeBg 8s linear infinite;
   background: -webkit-gradient(linear, left bottom, left top, from(magenta), to(coral));
   background: linear-gradient(to top, magenta, coral);
+}
+
+@media screen and (max-width: 780px) {
+  .project_list {
+    grid-gap: 0 4vmin;
+    -ms-grid-columns: (1fr)[2] !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .btn {
+    font-size: 1em !important;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .sec_5 h3 {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    font-size: 1.5em !important;
+  }
+  .project_list {
+    -ms-grid-columns: 1fr !important;
+        grid-template-columns: 1fr !important;
+  }
+  .btn {
+    font-size: 1em !important;
+  }
 }
 
 @-webkit-keyframes changeBg {
@@ -560,6 +735,27 @@ nav ul li .link:hover {
   padding: 0px 10px;
   text-align: center;
   margin: 10vmin 0;
+}
+
+@media screen and (max-width: 780px) {
+  .post_list {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    -ms-grid-rows: (1fr)[auto];
+        grid-template-rows: repeat(auto, 1fr);
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .post_list {
+    -ms-grid-columns: 1fr !important;
+        grid-template-columns: 1fr !important;
+  }
+  .btn {
+    font-size: 1em !important;
+  }
 }
 
 @keyframes changeBg {
@@ -752,6 +948,566 @@ nav ul li .link:hover {
   color: #000;
 }
 
+@media screen and (max-width: 780px) {
+  .contact_sec h2 {
+    padding: 12vmin 0 2vmin 0;
+  }
+  .contact_sec .form {
+    width: 85% !important;
+  }
+}
+
+.container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container .myProjects_list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (1fr)[auto];
+      grid-template-rows: repeat(auto, 1fr);
+}
+
+@media screen and (max-width: 850px) {
+  .myProjects_list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+section:nth-of-type(3) {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #1e1e1e;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1vmin .5vmin 6vmin .5vmin;
+  height: auto !important;
+}
+
+section:nth-of-type(3) .subtitle-3 {
+  text-align: center;
+  padding: 4vmin 0;
+  font-size: 3em;
+  font-weight: 700;
+  color: #fff;
+}
+
+section:nth-of-type(3) .skillBars {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0.625em 20vmin;
+}
+
+section:nth-of-type(3) .skillBars .skills {
+  padding: 10px 40px;
+  width: 500px;
+  max-height: auto;
+  margin: 20px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+section:nth-of-type(3) .skillBars .skills .html-span {
+  position: absolute;
+  right: -15px;
+  top: -10px;
+  font-size: 3em;
+  color: brown;
+  font-weight: bold;
+}
+
+section:nth-of-type(3) .skillBars .skills .percent {
+  position: relative;
+  width: 70%;
+  height: 50px;
+  margin-left: 2vmin;
+  border-radius: 20px;
+  background-color: #ddd;
+}
+
+@media screen and (max-width: 580px) {
+  section:nth-of-type(3) .skillBars .skills {
+    width: 300px;
+  }
+  section:nth-of-type(3) .skillBars .skills .html-span {
+    font-size: 1.8em;
+  }
+  section:nth-of-type(3) .skillBars .skills .percent {
+    height: 20px;
+  }
+}
+
+section:nth-of-type(3) .skillBars .html-icon {
+  color: brown;
+  font-size: 4em;
+  position: absolute;
+  left: 0;
+}
+
+@media screen and (max-width: 580px) {
+  section:nth-of-type(3) .skillBars .html-icon {
+    font-size: 2.5em;
+  }
+}
+
+section:nth-of-type(3) .skillBars .html-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 100%;
+  border-radius: 20px;
+  background: -webkit-gradient(linear, left top, right top, from(#f12711), to(#f5af19));
+  background: linear-gradient(to right, #f12711, #f5af19);
+  -webkit-animation: bars 3s ease-in-out;
+          animation: bars 3s ease-in-out;
+}
+
+section:nth-of-type(3) .skillBars .skills {
+  padding: 10px 40px;
+  width: 500px;
+  max-height: auto;
+  margin: 20px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+section:nth-of-type(3) .skillBars .skills .css-span {
+  position: absolute;
+  right: -15px;
+  top: -10px;
+  font-size: 3em;
+  color: blue;
+  font-weight: bold;
+}
+
+section:nth-of-type(3) .skillBars .skills .percent {
+  position: relative;
+  width: 70%;
+  height: 50px;
+  margin-left: 2vmin;
+  border-radius: 20px;
+  background-color: #ddd;
+}
+
+@media screen and (max-width: 580px) {
+  section:nth-of-type(3) .skillBars .skills {
+    width: 300px;
+  }
+  section:nth-of-type(3) .skillBars .skills .css-span {
+    font-size: 1.8em;
+  }
+  section:nth-of-type(3) .skillBars .skills .percent {
+    height: 20px;
+  }
+}
+
+section:nth-of-type(3) .skillBars .css-icon {
+  color: blue;
+  font-size: 4em;
+  position: absolute;
+  left: 0;
+}
+
+@media screen and (max-width: 580px) {
+  section:nth-of-type(3) .skillBars .css-icon {
+    font-size: 2.5em;
+  }
+}
+
+section:nth-of-type(3) .skillBars .css-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 85%;
+  height: 100%;
+  border-radius: 20px;
+  background: -webkit-gradient(linear, left top, right top, from(#084be6), to(#0bd7fb));
+  background: linear-gradient(to right, #084be6, #0bd7fb);
+  -webkit-animation: bars 3s ease-in-out;
+          animation: bars 3s ease-in-out;
+}
+
+section:nth-of-type(3) .skillBars .skills {
+  padding: 10px 40px;
+  width: 500px;
+  max-height: auto;
+  margin: 20px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+section:nth-of-type(3) .skillBars .skills .js-span {
+  position: absolute;
+  right: -15px;
+  top: -10px;
+  font-size: 3em;
+  color: rgba(245, 241, 46, 0.794);
+  font-weight: bold;
+}
+
+section:nth-of-type(3) .skillBars .skills .percent {
+  position: relative;
+  width: 70%;
+  height: 50px;
+  margin-left: 2vmin;
+  border-radius: 20px;
+  background-color: #ddd;
+}
+
+@media screen and (max-width: 580px) {
+  section:nth-of-type(3) .skillBars .skills {
+    width: 300px;
+  }
+  section:nth-of-type(3) .skillBars .skills .js-span {
+    font-size: 1.8em;
+  }
+  section:nth-of-type(3) .skillBars .skills .percent {
+    height: 20px;
+  }
+}
+
+section:nth-of-type(3) .skillBars .js-icon {
+  color: rgba(245, 241, 46, 0.794);
+  font-size: 4em;
+  position: absolute;
+  left: 0;
+}
+
+@media screen and (max-width: 580px) {
+  section:nth-of-type(3) .skillBars .js-icon {
+    font-size: 2.5em;
+  }
+}
+
+section:nth-of-type(3) .skillBars .js-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 85%;
+  height: 100%;
+  border-radius: 20px;
+  background: -webkit-gradient(linear, right top, left top, from(#a0fb0d), to(#f4f803));
+  background: linear-gradient(to left, #a0fb0d, #f4f803);
+  -webkit-animation: bars 3s ease-in-out;
+          animation: bars 3s ease-in-out;
+}
+
+section:nth-of-type(3) .skillBars .skills {
+  padding: 10px 40px;
+  width: 500px;
+  max-height: auto;
+  margin: 20px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+section:nth-of-type(3) .skillBars .skills .react-span {
+  position: absolute;
+  right: -15px;
+  top: -10px;
+  font-size: 3em;
+  color: #07e9f1;
+  font-weight: bold;
+}
+
+section:nth-of-type(3) .skillBars .skills .percent {
+  position: relative;
+  width: 70%;
+  height: 50px;
+  margin-left: 2vmin;
+  border-radius: 20px;
+  background-color: #ddd;
+}
+
+@media screen and (max-width: 580px) {
+  section:nth-of-type(3) .skillBars .skills {
+    width: 300px;
+  }
+  section:nth-of-type(3) .skillBars .skills .react-span {
+    font-size: 1.8em;
+  }
+  section:nth-of-type(3) .skillBars .skills .percent {
+    height: 20px;
+  }
+}
+
+section:nth-of-type(3) .skillBars .react-icon {
+  color: #07e9f1;
+  font-size: 4em;
+  position: absolute;
+  left: 0;
+}
+
+@media screen and (max-width: 580px) {
+  section:nth-of-type(3) .skillBars .react-icon {
+    font-size: 2.5em;
+  }
+}
+
+section:nth-of-type(3) .skillBars .react-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 100%;
+  border-radius: 20px;
+  background: -webkit-gradient(linear, left top, right top, from(#11d7f1), to(#19f5c5));
+  background: linear-gradient(to right, #11d7f1, #19f5c5);
+  -webkit-animation: bars 3s ease-in-out;
+          animation: bars 3s ease-in-out;
+}
+
+section:nth-of-type(3) .skillBars .skills {
+  padding: 10px 40px;
+  width: 500px;
+  max-height: auto;
+  margin: 20px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+section:nth-of-type(3) .skillBars .skills .php-span {
+  position: absolute;
+  right: -15px;
+  top: -10px;
+  font-size: 3em;
+  color: #333399;
+  font-weight: bold;
+}
+
+section:nth-of-type(3) .skillBars .skills .percent {
+  position: relative;
+  width: 70%;
+  height: 50px;
+  margin-left: 2vmin;
+  border-radius: 20px;
+  background-color: #ddd;
+}
+
+@media screen and (max-width: 580px) {
+  section:nth-of-type(3) .skillBars .skills {
+    width: 300px;
+  }
+  section:nth-of-type(3) .skillBars .skills .php-span {
+    font-size: 1.8em;
+  }
+  section:nth-of-type(3) .skillBars .skills .percent {
+    height: 20px;
+  }
+}
+
+section:nth-of-type(3) .skillBars .php-icon {
+  color: #333399;
+  font-size: 4em;
+  position: absolute;
+  left: 0;
+}
+
+@media screen and (max-width: 580px) {
+  section:nth-of-type(3) .skillBars .php-icon {
+    font-size: 2.5em;
+  }
+}
+
+section:nth-of-type(3) .skillBars .php-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  border-radius: 20px;
+  background: -webkit-gradient(linear, right top, left top, from(#ff00cc), to(#333399));
+  background: linear-gradient(to left, #ff00cc, #333399);
+  -webkit-animation: bars 3s ease-in-out;
+          animation: bars 3s ease-in-out;
+}
+
+section:nth-of-type(3) .skillBars .skills {
+  padding: 10px 40px;
+  width: 500px;
+  max-height: auto;
+  margin: 20px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+section:nth-of-type(3) .skillBars .skills .nodeJs-span {
+  position: absolute;
+  right: -15px;
+  top: -10px;
+  font-size: 3em;
+  color: #00f260;
+  font-weight: bold;
+}
+
+section:nth-of-type(3) .skillBars .skills .percent {
+  position: relative;
+  width: 70%;
+  height: 50px;
+  margin-left: 2vmin;
+  border-radius: 20px;
+  background-color: #ddd;
+}
+
+@media screen and (max-width: 580px) {
+  section:nth-of-type(3) .skillBars .skills {
+    width: 300px;
+  }
+  section:nth-of-type(3) .skillBars .skills .nodeJs-span {
+    font-size: 1.8em;
+  }
+  section:nth-of-type(3) .skillBars .skills .percent {
+    height: 20px;
+  }
+}
+
+section:nth-of-type(3) .skillBars .nodeJs-icon {
+  color: #00f260;
+  font-size: 4em;
+  position: absolute;
+  left: 0;
+}
+
+@media screen and (max-width: 580px) {
+  section:nth-of-type(3) .skillBars .nodeJs-icon {
+    font-size: 2.5em;
+  }
+}
+
+section:nth-of-type(3) .skillBars .nodeJs-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 75%;
+  height: 100%;
+  border-radius: 20px;
+  background: -webkit-gradient(linear, right top, left top, from(#00f260), to(#0575e6));
+  background: linear-gradient(to left, #00f260, #0575e6);
+  -webkit-animation: bars 3s ease-in-out;
+          animation: bars 3s ease-in-out;
+}
+
+@media screen and (max-width: 780px) {
+  section:nth-of-type(3) .skillBars {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: (1fr)[auto];
+        grid-template-rows: repeat(auto, 1fr);
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -810,6 +1566,7 @@ section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: 16px;
 }
 
 .sec_1 .hero {
@@ -826,6 +1583,7 @@ section {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  font-size: 1em;
 }
 
 .sec_1 .hero h1 {
@@ -838,396 +1596,6 @@ section {
   color: #fff;
   text-align: center;
   font-size: 2em;
-}
-
-section:nth-of-type(3) {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  background: #1e1e1e;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-section:nth-of-type(3) .subtitle-3 {
-  position: absolute;
-  top: 40px;
-  text-align: center;
-  left: 45%;
-  font-size: 2.5em;
-  font-weight: 700;
-  color: #fff;
-}
-
-section:nth-of-type(3) .skillBars {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
-  grid-gap: 0.625em 20vmin;
-}
-
-section:nth-of-type(3) .skillBars .skills {
-  padding: 10px 40px;
-  width: 500px;
-  max-height: auto;
-  margin: 20px 0px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  position: relative;
-}
-
-section:nth-of-type(3) .skillBars .skills .html-span {
-  position: absolute;
-  right: -15px;
-  top: -10px;
-  font-size: 3em;
-  color: brown;
-  font-weight: bold;
-}
-
-section:nth-of-type(3) .skillBars .skills .percent {
-  position: relative;
-  width: 70%;
-  height: 50px;
-  margin-left: 2vmin;
-  border-radius: 20px;
-  background-color: #ddd;
-}
-
-section:nth-of-type(3) .skillBars .html-icon {
-  color: brown;
-  font-size: 4em;
-  position: absolute;
-  left: 0;
-}
-
-section:nth-of-type(3) .skillBars .html-progress {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 90%;
-  height: 100%;
-  border-radius: 20px;
-  background: -webkit-gradient(linear, left top, right top, from(#f12711), to(#f5af19));
-  background: linear-gradient(to right, #f12711, #f5af19);
-  -webkit-animation: bars 3s ease-in-out;
-          animation: bars 3s ease-in-out;
-}
-
-section:nth-of-type(3) .skillBars .skills {
-  padding: 10px 40px;
-  width: 500px;
-  max-height: auto;
-  margin: 20px 0px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  position: relative;
-}
-
-section:nth-of-type(3) .skillBars .skills .css-span {
-  position: absolute;
-  right: -15px;
-  top: -10px;
-  font-size: 3em;
-  color: blue;
-  font-weight: bold;
-}
-
-section:nth-of-type(3) .skillBars .skills .percent {
-  position: relative;
-  width: 70%;
-  height: 50px;
-  margin-left: 2vmin;
-  border-radius: 20px;
-  background-color: #ddd;
-}
-
-section:nth-of-type(3) .skillBars .css-icon {
-  color: blue;
-  font-size: 4em;
-  position: absolute;
-  left: 0;
-}
-
-section:nth-of-type(3) .skillBars .css-progress {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 85%;
-  height: 100%;
-  border-radius: 20px;
-  background: -webkit-gradient(linear, left top, right top, from(#084be6), to(#0bd7fb));
-  background: linear-gradient(to right, #084be6, #0bd7fb);
-  -webkit-animation: bars 3s ease-in-out;
-          animation: bars 3s ease-in-out;
-}
-
-section:nth-of-type(3) .skillBars .skills {
-  padding: 10px 40px;
-  width: 500px;
-  max-height: auto;
-  margin: 20px 0px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  position: relative;
-}
-
-section:nth-of-type(3) .skillBars .skills .js-span {
-  position: absolute;
-  right: -15px;
-  top: -10px;
-  font-size: 3em;
-  color: rgba(245, 241, 46, 0.794);
-  font-weight: bold;
-}
-
-section:nth-of-type(3) .skillBars .skills .percent {
-  position: relative;
-  width: 70%;
-  height: 50px;
-  margin-left: 2vmin;
-  border-radius: 20px;
-  background-color: #ddd;
-}
-
-section:nth-of-type(3) .skillBars .js-icon {
-  color: rgba(245, 241, 46, 0.794);
-  font-size: 4em;
-  position: absolute;
-  left: 0;
-}
-
-section:nth-of-type(3) .skillBars .js-progress {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 85%;
-  height: 100%;
-  border-radius: 20px;
-  background: -webkit-gradient(linear, right top, left top, from(#a0fb0d), to(#f4f803));
-  background: linear-gradient(to left, #a0fb0d, #f4f803);
-  -webkit-animation: bars 3s ease-in-out;
-          animation: bars 3s ease-in-out;
-}
-
-section:nth-of-type(3) .skillBars .skills {
-  padding: 10px 40px;
-  width: 500px;
-  max-height: auto;
-  margin: 20px 0px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  position: relative;
-}
-
-section:nth-of-type(3) .skillBars .skills .react-span {
-  position: absolute;
-  right: -15px;
-  top: -10px;
-  font-size: 3em;
-  color: #07e9f1;
-  font-weight: bold;
-}
-
-section:nth-of-type(3) .skillBars .skills .percent {
-  position: relative;
-  width: 70%;
-  height: 50px;
-  margin-left: 2vmin;
-  border-radius: 20px;
-  background-color: #ddd;
-}
-
-section:nth-of-type(3) .skillBars .react-icon {
-  color: #07e9f1;
-  font-size: 4em;
-  position: absolute;
-  left: 0;
-}
-
-section:nth-of-type(3) .skillBars .react-progress {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 70%;
-  height: 100%;
-  border-radius: 20px;
-  background: -webkit-gradient(linear, left top, right top, from(#11d7f1), to(#19f5c5));
-  background: linear-gradient(to right, #11d7f1, #19f5c5);
-  -webkit-animation: bars 3s ease-in-out;
-          animation: bars 3s ease-in-out;
-}
-
-section:nth-of-type(3) .skillBars .skills {
-  padding: 10px 40px;
-  width: 500px;
-  max-height: auto;
-  margin: 20px 0px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  position: relative;
-}
-
-section:nth-of-type(3) .skillBars .skills .php-span {
-  position: absolute;
-  right: -15px;
-  top: -10px;
-  font-size: 3em;
-  color: #333399;
-  font-weight: bold;
-}
-
-section:nth-of-type(3) .skillBars .skills .percent {
-  position: relative;
-  width: 70%;
-  height: 50px;
-  margin-left: 2vmin;
-  border-radius: 20px;
-  background-color: #ddd;
-}
-
-section:nth-of-type(3) .skillBars .php-icon {
-  color: #333399;
-  font-size: 4em;
-  position: absolute;
-  left: 0;
-}
-
-section:nth-of-type(3) .skillBars .php-progress {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 60%;
-  height: 100%;
-  border-radius: 20px;
-  background: -webkit-gradient(linear, right top, left top, from(#ff00cc), to(#333399));
-  background: linear-gradient(to left, #ff00cc, #333399);
-  -webkit-animation: bars 3s ease-in-out;
-          animation: bars 3s ease-in-out;
-}
-
-section:nth-of-type(3) .skillBars .skills {
-  padding: 10px 40px;
-  width: 500px;
-  max-height: auto;
-  margin: 20px 0px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  position: relative;
-}
-
-section:nth-of-type(3) .skillBars .skills .nodeJs-span {
-  position: absolute;
-  right: -15px;
-  top: -10px;
-  font-size: 3em;
-  color: #00f260;
-  font-weight: bold;
-}
-
-section:nth-of-type(3) .skillBars .skills .percent {
-  position: relative;
-  width: 70%;
-  height: 50px;
-  margin-left: 2vmin;
-  border-radius: 20px;
-  background-color: #ddd;
-}
-
-section:nth-of-type(3) .skillBars .nodeJs-icon {
-  color: #00f260;
-  font-size: 4em;
-  position: absolute;
-  left: 0;
-}
-
-section:nth-of-type(3) .skillBars .nodeJs-progress {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 75%;
-  height: 100%;
-  border-radius: 20px;
-  background: -webkit-gradient(linear, right top, left top, from(#00f260), to(#0575e6));
-  background: linear-gradient(to left, #00f260, #0575e6);
-  -webkit-animation: bars 3s ease-in-out;
-          animation: bars 3s ease-in-out;
 }
 
 @-webkit-keyframes bars {
@@ -1246,39 +1614,22 @@ section:nth-of-type(3) .skillBars .nodeJs-progress {
   body, html {
     overflow-x: hidden !important;
   }
+  .sec_1 {
+    font-size: 14px;
+  }
   .my_card {
     font-size: 13px;
   }
 }
 
-@media screen and (max-width: 550px) {
-  .post_list {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+@media screen and (max-width: 650px) {
+  .sec_1 {
+    font-size: 12px;
   }
-  .my_card {
-    font-size: 10px;
-    margin-bottom: 4vmin;
-  }
-  .project_list {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+  .sec_1 .hero h1 {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
   }
 }
 /*# sourceMappingURL=index.css.map */

@@ -1,26 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { getContentfulData } from "../../../utils/getContentfulData";
 import Project from "../../Project/Project";
+import styles from "./AllProjects.module.css";
 
-const classes = {
-  container: {
-    width: "100%",
-    height: "100vh",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: 'column',
-    padding: '20mvin 0vmin'
-},
-myProjects_list: {
-    width: '100%',
-    height: '80%',
-    display: "flex",
-    justifyContent: "space-around",
-    alignItems: "center",
-    marginTop: '14vmin !important'
-  }
-};
+
 
 const AllProjects = () => {
   const [ProjectData, setProjectData] = useState([]);
@@ -53,9 +36,11 @@ const AllProjects = () => {
   }, []);
 
   return (
-    <>
-      <div style={classes.container} className="my_projects">
-        <div style={classes.myProjects_list}>
+      <div className={styles.container}>
+        <div className={styles.project_title}>
+          <h3>All my Projects</h3>
+        </div>
+        <div className={styles.grid_projects}>
           {ProjectData.map((item, i) => {
             const { title, desc, url, link } = item;
             return (
@@ -70,7 +55,6 @@ const AllProjects = () => {
           })}
         </div>
       </div>
-    </>
   );
 };
 

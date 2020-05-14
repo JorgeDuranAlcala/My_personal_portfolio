@@ -9,6 +9,7 @@
     background: url(../assets/img/svgs/wave_2.svg);
     background-position: 0 bottom;
     transform-origin: center bottom;
+    overflow-x: hidden;
     background-repeat: repeat-x;
 
     &_1 {
@@ -38,6 +39,12 @@
 }
 /* background-color: #0A0B26; */
 /* #221F73 */
+
+@media screen and (max-width: 780px) {
+    .wave {
+        display: none;
+    }
+}
 
 @keyframes aniwave1 {
     0% { transform: translateX(0%) translateZ(0) scaleY(.2) ; }
