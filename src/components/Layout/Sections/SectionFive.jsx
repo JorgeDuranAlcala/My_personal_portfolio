@@ -21,25 +21,29 @@ const SectionFive = () => {
     <div>
       <section className="post_section">
         <h3 className="post_subtitle">Most Recent Post</h3>
-        <div className="post_list">
-          {Articles &&
-            Articles.map((item, i) => {
-              const { title, desc } = item.fields;
-              let description =
-                desc.length > 110 ? desc.slice(0, 110).concat("...") : desc;
-              return (
-                <Post
-                  title={title}
-                  desc={description}
-                  cls="my_card"
-                  link="/blog"
-                  style={{ marginBottom: "15vmin" }}
-                  key={i}
-                ></Post>
-              );
-            })}
+        <div className="post_cont">
+          <div className="post_list">
+            {Articles &&
+              Articles.map((item, i) => {
+                const { title, desc } = item.fields;
+                let description =
+                  desc.length > 110 ? desc.slice(0, 110).concat("...") : desc;
+                return (
+                  <Post
+                    title={title}
+                    desc={description}
+                    cls="my_card"
+                    link="/blog"
+                    style={{ marginBottom: "15vmin" }}
+                    key={i}
+                  ></Post>
+                );
+              })}
+          </div>
         </div>
-        <a href="/blog" className="btn my-4">See All Posts</a>
+        <a href="/blog" className="btn my-4">
+          See All Posts
+        </a>
       </section>
     </div>
   );

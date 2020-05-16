@@ -640,7 +640,7 @@ nav ul li .link:hover {
 }
 
 @media screen and (max-width: 650px) {
-  .sec_5 h3 {
+  .sec_5_title {
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
@@ -685,6 +685,15 @@ nav ul li .link:hover {
   }
 }
 
+.post_cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .post_section {
   position: relative;
   display: -webkit-box;
@@ -694,9 +703,9 @@ nav ul li .link:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -745,6 +754,7 @@ nav ul li .link:hover {
         grid-template-columns: repeat(2, 1fr);
     -ms-grid-rows: (1fr)[auto];
         grid-template-rows: repeat(auto, 1fr);
+    grid-gap: 4vmin 0;
   }
 }
 
@@ -752,6 +762,7 @@ nav ul li .link:hover {
   .post_list {
     -ms-grid-columns: 1fr !important;
         grid-template-columns: 1fr !important;
+    font-size: 14px;
   }
   .btn {
     font-size: 1em !important;

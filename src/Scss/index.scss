@@ -69,13 +69,10 @@ section {
         font-size: 14px;
     }
 
-    .my_card {
-        font-size: 13px;
-    }
 }
 
 @media screen and (max-width: 650px) {
-
+    
     .sec_1 {
         font-size: 12px;
         .hero {
@@ -83,6 +80,9 @@ section {
                 width: max-content;
             }
         }
+    }
+    .my_card {
+        font-size: 13px;
     }
 }
 
