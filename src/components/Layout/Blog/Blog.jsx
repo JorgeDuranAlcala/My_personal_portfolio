@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getAllContentFulData } from "../../../utils/getContentfulData";
 import Post from "../../Post/Post";
+import { Spinner } from "../..";
 
 const styles = {
   container: {
@@ -18,15 +19,27 @@ const styles = {
 const Blog = () => {
 
   const [Data, setData] = useState([]);
+  const [cargando, setCargando] = useState(true)
 
   useEffect(() => {
     const fetchData = async () => {
       const data = await getAllContentFulData("post");
       setData(data);
+      setCargando(false)
     };
 
     fetchData();
   }, []);
+
+  if(cargando) {
+    return (
+            <div className="spin_container">
+                <Spinner/>
+                <p>Espere unos segundos</p>
+            </div>
+          )
+  }
+
 
   return (
     <div style={styles.container}>

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { getContentfulData } from "../../../utils/getContentfulData";
 import Project from "../../Project/Project";
+import TransitonGroup from "react-transition-group/TransitionGroup";
+import Fade from "react-reveal/Fade";
 
 const classes = {
   container: {
@@ -61,21 +63,25 @@ const SectionThree = () => {
     <div>
       <section style={classes.container} className="sec_5">
         <h3 style={classes.title} className="sec_5_title">Most Recent Projects</h3>
-        <div style={classes.projectsList} className="project_list">
-          {ProjectData.map((item, i) => {
-            const { title, desc, url, link } = item;
-            return (
-              <Project
-                title={title}
-                desc={desc}
-                link={link}
-                url={url}
-                key={i}
-                
-              />
-            );
-          })}
-        </div>
+        <TransitonGroup>
+          <div style={classes.projectsList} className="project_list">
+            {ProjectData.map((item, i) => {
+              const { title, desc, url, link } = item;
+              return (
+                <Fade bottom>
+                  <Project
+                  title={title}
+                  desc={desc}
+                  link={link}
+                  url={url}
+                  key={i}
+                  
+                  />
+                </Fade>
+                );
+              })}
+          </div>
+        </TransitonGroup>
         <a 
         className="btn btn-primary my-4" 
         style={classes.mvmin}

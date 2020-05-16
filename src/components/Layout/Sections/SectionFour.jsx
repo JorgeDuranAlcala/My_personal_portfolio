@@ -7,7 +7,7 @@ import {
     faPhp,
     faNodeJs,
   } from "@fortawesome/fontawesome-free-brands";
-  import { SkillBar, Icon } from "../../index";
+  import { SkillBar } from "../../index";
 
 const SectionFour = ({ showUp }) => {
 

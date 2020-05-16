@@ -2,6 +2,7 @@ import React from "react";
 import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./Layout/Home";
 import { Navbar, AllProjects, Blog, PostView } from "./index.js";
+import NotFound from "./NotFound/NotFound";
 
 
 class Main extends React.Component {
@@ -38,6 +39,9 @@ class Main extends React.Component {
             </Route>
             <Route path="/postView/:id">
               <PostView/>
+            </Route>
+            <Route path="*">
+                <NotFound/>
             </Route>
           </Switch>
         </Router>

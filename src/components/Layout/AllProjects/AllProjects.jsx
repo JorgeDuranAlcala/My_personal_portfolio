@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import { getContentfulData } from "../../../utils/getContentfulData";
 import Project from "../../Project/Project";
 import styles from "./AllProjects.module.css";
+import { Spinner } from "../..";
 
 
 
 const AllProjects = () => {
   const [ProjectData, setProjectData] = useState([]);
+  const [cargando, setCargando] = useState(true)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,7 +27,7 @@ const AllProjects = () => {
           newState = [...newState, { ...project }];
           return true;
         });
-
+        setCargando(false)
         setProjectData(newState);
       } catch (error) {
         console.log(error);
@@ -34,6 +36,15 @@ const AllProjects = () => {
 
     fetchData();
   }, []);
+
+    if(cargando) {
+        return (
+                <div className={styles.loadingCont}>
+                    <Spinner/>
+                    <p>Espere unos segundos</p>
+                </div>
+              )
+    }
 
   return (
       <div className={styles.container}>
