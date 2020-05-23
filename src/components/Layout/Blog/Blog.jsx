@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { getAllContentFulData } from "../../../utils/getContentfulData";
 import Post from "../../Post/Post";
 import { Spinner } from "../..";
+import { TransitionGroup } from "react-transition-group";
+import Fade from "react-reveal/Fade";
 
 const styles = {
   container: {
@@ -46,22 +48,28 @@ const Blog = () => {
       <div className="blog_title">
         <h3>Welcome To My Blog</h3>
       </div>
-      <div className="grid_list">
-        {Data.map((item, i) => {
-          const { title, desc } = item.fields;
-          const { id } = item.sys;
-          let description =
-            desc.length > 110 ? desc.slice(0, 110).concat("...") : desc;
-          return <Post 
-          title={title} 
-          desc={description} 
-          key={i}
-          cls="blog_post my_card"
-          id={id}
-          link="/postView"
-          ></Post>;
-        })}
-      </div>
+      <TransitionGroup>
+        <div className="grid_list">
+          {Data.map((item, i) => {
+            const { title, desc } = item.fields;
+            const { id } = item.sys;
+            let description =
+              desc.length > 110 ? desc.slice(0, 110).concat("...") : desc;
+            return (
+              <Fade bottom>
+                <Post 
+                title={title} 
+                desc={description} 
+                key={i}
+                cls="blog_post my_card"
+                id={id}
+                link="/postView"
+                />
+              </Fade>
+            )
+          })}
+        </div>
+      </TransitionGroup>
     </div>
   );
 };

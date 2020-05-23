@@ -43,6 +43,13 @@
         display: flex;
         justify-content: center;
         flex-direction: column;
+        &_icon {
+            position: fixed;
+            top: 20vmin;
+            cursor: pointer;
+            font-size: 3em;
+            left: 8vmin;
+        }
     }
     &_comments {
         width: 60%;

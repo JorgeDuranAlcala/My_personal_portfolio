@@ -443,6 +443,14 @@ nav ul li .link:hover {
           flex-direction: column;
 }
 
+.blog_view_icon {
+  position: fixed;
+  top: 20vmin;
+  cursor: pointer;
+  font-size: 3em;
+  left: 8vmin;
+}
+
 .blog_comments {
   width: 60%;
   margin: 8px 20%;

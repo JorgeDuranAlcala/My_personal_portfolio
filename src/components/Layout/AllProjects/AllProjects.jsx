@@ -3,12 +3,12 @@ import { getContentfulData } from "../../../utils/getContentfulData";
 import Project from "../../Project/Project";
 import styles from "./AllProjects.module.css";
 import { Spinner } from "../..";
-
-
+import { TransitionGroup } from "react-transition-group";
+import Fade from "react-reveal/Fade";
 
 const AllProjects = () => {
   const [ProjectData, setProjectData] = useState([]);
-  const [cargando, setCargando] = useState(true)
+  const [cargando, setCargando] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,7 +27,7 @@ const AllProjects = () => {
           newState = [...newState, { ...project }];
           return true;
         });
-        setCargando(false)
+        setCargando(false);
         setProjectData(newState);
       } catch (error) {
         console.log(error);
@@ -37,35 +37,39 @@ const AllProjects = () => {
     fetchData();
   }, []);
 
-    if(cargando) {
-        return (
-                <div className={styles.loadingCont}>
-                    <Spinner/>
-                    <p>Espere unos segundos</p>
-                </div>
-              )
-    }
+  if (cargando) {
+    return (
+      <div className={styles.loadingCont}>
+        <Spinner />
+        <p>Espere unos segundos</p>
+      </div>
+    );
+  }
 
   return (
-      <div className={styles.container}>
-        <div className={styles.project_title}>
-          <h3>All my Projects</h3>
-        </div>
+    <div className={styles.container}>
+      <div className={styles.project_title}>
+        <h3>All my Projects</h3>
+      </div>
+      <TransitionGroup>
         <div className={styles.grid_projects}>
           {ProjectData.map((item, i) => {
             const { title, desc, url, link } = item;
             return (
-              <Project
-                title={title}
-                desc={desc}
-                link={link}
-                url={url}
-                key={i}
-              />
+              <Fade bottom>
+                <Project
+                  title={title}
+                  desc={desc}
+                  link={link}
+                  url={url}
+                  key={i}
+                />
+              </Fade>
             );
           })}
         </div>
-      </div>
+      </TransitionGroup>
+    </div>
   );
 };
 

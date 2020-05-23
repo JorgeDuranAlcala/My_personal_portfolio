@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { getContentById } from "../../../utils/getContentfulData";
-import { useParams } from "react-router-dom";
+import { useParams, Redirect } from "react-router-dom";
 import { Article, Spinner } from "../../index.js"
 import Disqus from 'disqus-react';
+import Zoom from "react-reveal/Zoom";
+import Icon from "../../Icon/Icon";
+import { faChevronCircleLeft } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const PostView = () => {
 
@@ -11,6 +15,7 @@ const PostView = () => {
   
   const [article, setArticle] = useState({});
   const [cargando, setCargando] = useState(true);
+  const [Redirecto, setRedirecto] = useState(false)
   
   useEffect(() => {
     const fetchData = async () => {
@@ -40,9 +45,19 @@ const PostView = () => {
     title
   }
 
-  return (
+  const handleClick = e => {
+      alert("click")
+  }
+
+return (
     <div className="blog_view">
-      <Article content={content}/>
+      { Redirecto && <Redirect to="/blog" /> }
+      <div onClick={handleClick}>
+        <FontAwesomeIcon icon={faChevronCircleLeft} color="black" onClick={handleClick} className="blog_view_icon" />
+      </div>
+      <Zoom>
+        <Article content={content}/>
+      </Zoom>
       <div className="blog_comments">
         <Disqus.DiscussionEmbed
           shortname={disqusShortName}

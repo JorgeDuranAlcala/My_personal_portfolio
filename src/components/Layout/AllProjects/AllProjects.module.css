@@ -6,6 +6,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-bottom: 6vmin;
 }
 
 .project_title {
