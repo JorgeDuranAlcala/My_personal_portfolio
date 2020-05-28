@@ -10,7 +10,6 @@ export const getDataFromYtbAPI = async (max, sortBy) => {
         const data = await fetch(`${URL}/search?channelId=${channelId}&maxResults=${max}&part=snippet&type=video&sort=${sortBy}&key=${API_KEY}`)
         .then(res => res.json())
         .then(response => response);
-        console.log(data)
         return data.items;
         
     } catch(error) {

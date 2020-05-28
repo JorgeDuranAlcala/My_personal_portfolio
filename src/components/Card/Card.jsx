@@ -9,18 +9,23 @@ const classes = {
         color: 'rgba(0,0,0,0.8)',
         textAlign: 'center',
         padding: '0 0 4vmin 0',
-        background: '#fff'
+        background: '#fff',
+        position: 'relative'
     },
     title: {
         fontSize: '1.2em',
         fontWeight: 'bold',
         textAlign: 'center',
-        paddingTop: '4vmin'
+        padding: '4vmin 4vmin 2vmin 4vmin'
     },
     desc: {
         textAlign: 'left',
         fontSize: '1.0625em',
         padding: '0 4vmin'
+    },
+    img_cont: {
+        width: '100%',
+        height: '100px',
     },
     post_img: {
         width: '100%'
@@ -36,7 +41,8 @@ const Card = ({ title, desc, url, link, linkName, cls, id, blank}) => {
     return (
         <div>
             <div style={classes.container} className={cls} >
-                    <img src={ url } alt="" style={classes.post_img}/>
+                <div style={{ backgroundImage:`url(${url})`, backgroundSize: 'cover' , width: '100%', height: '250px' }}>
+                </div>
                 <h3 style={classes.title}>
                     { title }
                 </h3>

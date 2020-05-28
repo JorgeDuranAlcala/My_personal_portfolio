@@ -4,11 +4,6 @@ import SectionFive from "./SectionFive";
 import SectionSeven from "./SectionSeven";
 import SectionTwo from "./SectionTwo";
 import SectionFour from "./SectionFour";
-export {
-    SectionFour,
-    SectionTwo,
-    SectionSix,
-    SectionThree,
-    SectionFive,
-    SectionSeven
-}
+import SectionOne from "./SectionOne";
+
+export default [SectionOne, SectionTwo, SectionThree, SectionFour, SectionFive, SectionSix, SectionSeven]

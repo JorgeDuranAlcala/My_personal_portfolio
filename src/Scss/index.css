@@ -259,6 +259,7 @@ nav ul li .link:hover {
   display: grid;
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
+  padding-bottom: 4vmin;
 }
 
 .aboutMe .about {
@@ -386,6 +387,7 @@ nav ul li .link:hover {
   grid-gap: 6vmin;
   -ms-grid-rows: (1fr)[auto];
       grid-template-rows: repeat(auto, 1fr);
+  margin-bottom: 6vmin;
 }
 
 .blog {
@@ -447,6 +449,7 @@ nav ul li .link:hover {
   position: fixed;
   top: 20vmin;
   cursor: pointer;
+  z-index: 999;
   font-size: 3em;
   left: 8vmin;
 }
@@ -457,8 +460,8 @@ nav ul li .link:hover {
 }
 
 .blog_article {
-  width: 80%;
-  margin: 8vmin 10%;
+  width: 62%;
+  margin: 8vmin calc(20% + 2vmin) 2vmin calc(20% + 2vmin);
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -504,6 +507,54 @@ nav ul li .link:hover {
 .blog_article pre {
   background-color: #00040D;
   color: #19f5c5;
+}
+
+.blog_writeBy {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 8vmin;
+}
+
+.blog_writeBy .data {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2px;
+}
+
+.blog_writeBy .data .profile_img {
+  width: 6.25em;
+  height: 6.25em;
+  margin-left: 21vmin;
+  border-radius: 50%;
+}
+
+.blog_writeBy .data .profile_img img {
+  width: 100%;
+  border-radius: inherit;
+}
+
+.blog_writeBy .data .about_writter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.blog_writeBy .data .about_writter h6 {
+  font-style: italic;
+  opacity: 0.8;
 }
 
 .spin_container {
@@ -552,6 +603,13 @@ nav ul li .link:hover {
   .grid_list {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
+  }
+  .blog_view_icon {
+    left: 4vmin;
+  }
+  .blog_article {
+    width: 86%;
+    margin: 2vmin 9vmin;
   }
 }
 

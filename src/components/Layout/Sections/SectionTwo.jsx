@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   faInstagram,
   faTwitter,
@@ -7,8 +7,22 @@ import {
 import profile from "../../../assets/img/profile1.jpg";
 import Icon from "../../Icon/Icon";
 import Fade from "react-reveal/Fade";
+import { getAllContentFulData } from "../../../utils/getContentfulData";
 
 const SectionTwo = () => {
+
+    const [AboutMe, setAboutMe] = useState('')
+
+  useEffect(() => {
+    const fetchData = async () => {
+           const data =  await getAllContentFulData('author')
+           const { aboutMe } = data[0].fields
+           setAboutMe(aboutMe)
+    }
+
+    fetchData()
+}, [])
+
   return (
     <section className="aboutMe">
             <div className="my_profile">
@@ -41,14 +55,7 @@ const SectionTwo = () => {
           <div className="about">
             <h3>About Me</h3>
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
-              adipisci provident perferendis consequatur ad pariatur illo labore,
-              delectus ut? Cumque reprehenderit iste dicta, quibusdam veniam
-              voluptatibus minus totam rem blanditiis?Perspiciatis officia
-              veritatis fugit facere nulla ab nisi, vel voluptatem ducimus
-              quibusdam illo sapiente sequi minus voluptates! Odio magnam
-              repudiandae nemo quod debitis. Animi ullam tenetur, assumenda fugiat
-              voluptatibus non.
+              { AboutMe }
             </p>
           </div>
         </Fade>
