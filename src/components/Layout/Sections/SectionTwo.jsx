@@ -15,9 +15,13 @@ const SectionTwo = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+        try {
            const data =  await getAllContentFulData('author')
            const { aboutMe } = data[0].fields
            setAboutMe(aboutMe)
+        } catch (error) { 
+            console.log(error)
+        }
     }
 
     fetchData()

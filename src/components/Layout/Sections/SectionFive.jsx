@@ -1,15 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { getContentfulData } from "../../../utils/getContentfulData";
 import Post from "../../Post/Post";
 import TransitonGroup from "react-transition-group/TransitionGroup";
 import Fade from "react-reveal/Fade";
+import { langContext } from "../../../Context/langContext.js";
 
 const SectionFive = () => {
   const [Articles, setArticles] = useState([]);
+  const lang = useContext(langContext)
   useEffect(() => {
+
+
     const fetchContData = async () => {
       try {
-        const articles = await getContentfulData("post");
+        const articles = await getContentfulData("post", 3, lang);
         setArticles(articles);
       } catch (error) {
         console.log(error);
@@ -17,7 +21,7 @@ const SectionFive = () => {
     };
 
     fetchContData();
-  }, []);
+  }, [lang]);
 
   return (
     <div>

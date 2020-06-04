@@ -9,8 +9,8 @@ const SectionOne = () => {
     <section className="sec_1">
       <Fade>
         <div className="hero">
-          <h1>I'm jorge Duran</h1>
-          <p>and I'm a Web Developer</p>
+          <h4>I'm jorge Duran, Full Stack Web Developer</h4>
+          <h1>I will help you to build you a website or application</h1>
         </div>
       </Fade>
       {/*   waves svg  */}

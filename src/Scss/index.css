@@ -522,18 +522,9 @@ nav ul li .link:hover {
   margin-bottom: 8vmin;
 }
 
-.blog_writeBy .data {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2px;
-}
-
 .blog_writeBy .data .profile_img {
   width: 6.25em;
   height: 6.25em;
-  margin-left: 21vmin;
   border-radius: 50%;
 }
 
@@ -1653,6 +1644,7 @@ section {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  text-align: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1678,14 +1670,16 @@ section {
 
 .sec_1 .hero h1 {
   color: #fff;
-  font-size: 4em;
+  font-size: 3.5em;
   font-weight: 900;
+  width: 80%;
 }
 
-.sec_1 .hero p {
+.sec_1 .hero h4 {
   color: #fff;
   text-align: center;
   font-size: 2em;
+  opacity: 0.8;
 }
 
 @-webkit-keyframes bars {

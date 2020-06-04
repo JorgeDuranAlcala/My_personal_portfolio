@@ -15,7 +15,7 @@ const SectionSix = () => {
         const fetchVideosData =  async () => {
             
             try {     
-                const data = await getDataFromYtbAPI('3', 'viewCount');
+                const data = await getDataFromYtbAPI();
                 setEmbedVideos(data)
        
                 } catch (error) {

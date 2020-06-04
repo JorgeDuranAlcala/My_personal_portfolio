@@ -6,6 +6,8 @@ import { TransitionGroup } from "react-transition-group";
 import Fade from "react-reveal/Fade";
 import PostPreview from "../../Post/PostPreview";
 import { Redirect } from "react-router-dom";
+import { langContext } from "../../../Context/langContext";
+import { useContext } from "react";
 
 const styles = {
   container: {
@@ -26,15 +28,16 @@ const Blog = () => {
   const [cargando, setCargando] = useState(true)
   const [Redirecto, setRedirecto] = useState(false)
   const [Id, setId] = useState('')
+  const context = useContext(langContext)
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await (await getAllContentFulData("post")).sort((a,b) =>  {
+      const data = await (await getAllContentFulData("post", context)).sort((a,b) =>  {
         var c = new Date(a.sys.createdAt);
         var d = new Date(b.sys.createdAt);
         return d - c;
       } );
-      console.log(data)
+      console.log(context)
       setData(data);
       setCargando(false)
     };

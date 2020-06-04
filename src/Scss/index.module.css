@@ -522,18 +522,9 @@ nav ul li .link:hover {
   margin-bottom: 8vmin;
 }
 
-.blog_writeBy .data {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2px;
-}
-
 .blog_writeBy .data .profile_img {
   width: 6.25em;
   height: 6.25em;
-  margin-left: 21vmin;
   border-radius: 50%;
 }
 

@@ -7,6 +7,8 @@ import Zoom from "react-reveal/Zoom";
 import Icon from "../../Icon/Icon";
 import { faChevronCircleLeft } from "@fortawesome/free-solid-svg-icons";
 import profile from "../../../assets/img/profile1.jpg";
+import { useContext } from "react";
+import { langContext } from "../../../Context/langContext";
 
 const PostView = () => {
   const { id } = useParams();
@@ -14,10 +16,11 @@ const PostView = () => {
   const [article, setArticle] = useState({});
   const [cargando, setCargando] = useState(true);
   const [Redirecto, setRedirecto] = useState(false);
+  const locale = useContext(langContext)
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getContentById(id);
+      const data = await getContentById(id, locale);
       setArticle(data);
       setCargando(false);
     };
