@@ -65,7 +65,7 @@ nav ul li .link:hover {
 .sticky {
   background-color: #fff;
   padding: 8px 20px;
-  z-index: 9999;
+  z-index: 1400;
 }
 
 .sticky .link {
@@ -83,9 +83,10 @@ nav ul li .link:hover {
 .burger {
   display: none;
   font-size: 2.5em;
-  position: absolute;
+  position: fixed;
   left: 0;
   z-index: 999;
+
 }
 
 .fa-window-close, .fa-bars {
@@ -1700,6 +1701,9 @@ section {
   }
   .sec_1 {
     font-size: 14px;
+  }
+  .sec_1 .hero h1 {
+      width: 90% !important;
   }
 }
 

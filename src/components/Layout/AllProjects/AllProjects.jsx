@@ -1,19 +1,21 @@
-import React, { useEffect, useState } from "react";
-import { getContentfulData } from "../../../utils/getContentfulData";
+import React, { useEffect, useState, useContext } from "react";
+import { getAllContentFulData } from "../../../utils/getContentfulData";
 import Project from "../../Project/Project";
 import styles from "./AllProjects.module.css";
 import { Spinner } from "../..";
 import { TransitionGroup } from "react-transition-group";
 import Fade from "react-reveal/Fade";
+import { langContext } from "../../../Context/langContext";
 
 const AllProjects = () => {
   const [ProjectData, setProjectData] = useState([]);
   const [cargando, setCargando] = useState(true);
+  const locale = useContext(langContext)
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await getContentfulData("projects");
+        const data = await getAllContentFulData("projects", locale);
 
         let newState = [];
         data.map((item) => {
@@ -41,7 +43,6 @@ const AllProjects = () => {
     return (
       <div className={styles.loadingCont}>
         <Spinner />
-        <p>Espere unos segundos</p>
       </div>
     );
   }

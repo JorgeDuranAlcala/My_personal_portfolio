@@ -14,7 +14,6 @@ const client = contentful.createClient({
 export const getContentfulData = async (content_type, limit, locale) => {
   try {
        const data =  (await Axios.get(`http://localhost:4000/contentful/${content_type}&${limit}&${locale || 'default'}`)).data
-      console.log(data)
        return data.items
         
       } catch (error) {
@@ -25,7 +24,6 @@ export const getContentfulData = async (content_type, limit, locale) => {
 export const getAllContentFulData = async (content_type, locale) => {
   try {
     const data =  (await Axios.get(`http://localhost:4000/contentful/${content_type}&0&${locale || 'default'}`)).data
-      console.log(data)
     return data.items;
     
   } catch (error) {
@@ -37,7 +35,6 @@ export const getContentById = async (id, locale) => {
   try {
     
     const res =  (await Axios.get(`http://localhost:4000/getContentById/${id}&${locale || 'default'}`)).data
-    console.log(res)
     return res.fields
     
     } catch (error) {

@@ -26,7 +26,7 @@ class Home extends React.Component {
   render() {
     const { showUp } = this.state;
 
-    return ( <> { SecArr.map( Section => <Section showUp={showUp} />) } </> );
+    return ( <> { SecArr.map( (Section, i) => <Section key={i} showUp={showUp} />) } </> );
 
   }
 }

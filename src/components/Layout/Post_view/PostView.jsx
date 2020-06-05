@@ -32,7 +32,6 @@ const PostView = () => {
     return (
       <div className="spin_container">
         <Spinner />
-        <p>Espere unos segundos</p>
       </div>
     );
   }

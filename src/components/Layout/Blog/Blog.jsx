@@ -29,6 +29,7 @@ const Blog = () => {
   const [Redirecto, setRedirecto] = useState(false)
   const [Id, setId] = useState('')
   const context = useContext(langContext)
+  console.log(context)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -43,13 +44,12 @@ const Blog = () => {
     };
 
     fetchData();
-  }, []);
+  }, [context]);
 
   if(cargando) {
     return (
             <div className="spin_container">
                 <Spinner/>
-                <p>Espere unos segundos</p>
             </div>
           )
   }
