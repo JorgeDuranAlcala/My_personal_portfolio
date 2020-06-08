@@ -20,7 +20,7 @@
 
 .grid_projects {
     display: grid !important;
-    grid-gap: 10vmin 2vmin;
+    grid-gap: 10vmin 4vmin;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(auto, 1fr);
 }

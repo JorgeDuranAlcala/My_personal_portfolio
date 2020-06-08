@@ -6,6 +6,7 @@ import UKI from "../../assets/img/svgs/reino-unido.svg"
 import ES from "../../assets/img/svgs/espana.svg"
 
 const Modal = ({ handleClick, display }) => {
+
     return (
         <div className={classes.container} style={{ display }}>
             <div className={classes.modal}>
@@ -18,7 +19,7 @@ const Modal = ({ handleClick, display }) => {
                             </div>
                             Espanol
                         </button>
-                        <button type="button" onClick={handleClick} value="en">
+                        <button type="button" onClick={handleClick} value="en-US">
                             <div className={classes.UK}>
                                 <img src={UKI}/>
                             </div>

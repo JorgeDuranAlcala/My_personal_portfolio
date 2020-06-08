@@ -37,7 +37,7 @@ const AllProjects = () => {
     };
 
     fetchData();
-  }, []);
+  }, [locale]);
 
   if (cargando) {
     return (

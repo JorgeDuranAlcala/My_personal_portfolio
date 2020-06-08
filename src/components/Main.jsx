@@ -5,7 +5,8 @@ import { Navbar, AllProjects, Blog, PostView } from "./index.js";
 import NotFound from "./NotFound/NotFound";
 import { langContext } from "../Context/langContext";
 import Modal from "./Modal/Modal";
-import { getLocalStorage, setLocalStorage } from "../utils/manageLocalStorage";
+import MiniModal from "./Modal/MiniModal";
+import { getLocalStorage, setLocalStorage, localStorageIsEmpty,  clearStorage } from "../utils/manageLocalStorage";
 
 
 class Main extends React.Component {
@@ -14,8 +15,10 @@ class Main extends React.Component {
     this.state = {
       cls: 'linkAlter',
       lang: getLocalStorage('lang'),
-      display: ''
+      display: '',
+      localIsEmpty: !localStorageIsEmpty()
     };
+
   }
 
 
@@ -34,16 +37,31 @@ class Main extends React.Component {
       this.setState({display:'none'})
   }
 
+  handleMiniModalClick = e => {
+      (this.state.display === '') ? this.setState({display: 'none'}) : this.setState({display: ''})
+  }
+
+  componentDidMount() {
+      if (localStorageIsEmpty()) {
+          this.setState({ display: 'none' })
+      }
+  }
+
   render() {
+
+         const { lang, display, localIsEmpty } = this.state
 
     return (
       <>
         <Router>
-          <langContext.Provider value={this.state.lang}>
-              <Navbar/>
+          <langContext.Provider value={lang}>
+                {/* Navigation */}
+                <Navbar/>
+                {/* Button to change language */}
+                <MiniModal handleClick={this.handleMiniModalClick} />
+                <Modal handleClick={this.handleClick} display={display}/>
                 <Switch>
                   <Route path="/" exact>
-                      <Modal handleClick={this.handleClick} display={this.state.display}/>
                       <Home></Home>
                   </Route>
                   <Route path="/allProjects">

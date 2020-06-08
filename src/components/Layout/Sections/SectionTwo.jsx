@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import {
   faInstagram,
   faTwitter,
@@ -8,15 +8,18 @@ import profile from "../../../assets/img/profile1.jpg";
 import Icon from "../../Icon/Icon";
 import Fade from "react-reveal/Fade";
 import { getAllContentFulData } from "../../../utils/getContentfulData";
+import { langContext } from "../../../Context/langContext.js";
+
 
 const SectionTwo = () => {
 
     const [AboutMe, setAboutMe] = useState('')
+    const lang = useContext(langContext)
 
   useEffect(() => {
     const fetchData = async () => {
         try {
-           const data =  await getAllContentFulData('author')
+           const data =  await getAllContentFulData('author', lang)
            const { aboutMe } = data[0].fields
            setAboutMe(aboutMe)
         } catch (error) { 
@@ -25,7 +28,7 @@ const SectionTwo = () => {
     }
 
     fetchData()
-}, [])
+}, [lang])
 
   return (
     <section className="aboutMe">

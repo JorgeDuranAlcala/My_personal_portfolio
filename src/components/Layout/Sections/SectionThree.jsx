@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { getContentfulData } from "../../../utils/getContentfulData";
 import Project from "../../Project/Project";
 import TransitonGroup from "react-transition-group/TransitionGroup";
 import Fade from "react-reveal/Fade";
+import { langContext } from "../../../Context/langContext.js";
 
 const classes = {
   container: {
@@ -31,11 +32,12 @@ const classes = {
 
 const SectionThree = () => {
   const [ProjectData, setProjectData] = useState([]);
+  const context = useContext(langContext)
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await getContentfulData("projects");
+        const data = await getContentfulData("projects", 3 ,context);
 
         let newState = [];
         data.map((item) => {
@@ -57,7 +59,7 @@ const SectionThree = () => {
     };
 
     fetchData();
-  }, []);
+  }, [context]);
 
   return (
     <div>
